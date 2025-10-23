@@ -45,7 +45,7 @@ export default function HomePage() {
           ease: 'power1.inOut',
           snap: { textContent: 1 },
           onUpdate: function () {
-            stat.textContent = Math.ceil(parseFloat(stat.textContent || '0'))
+            stat.textContent = Math.ceil(parseFloat(stat.textContent || '0')).toString()
           },
         })
       })

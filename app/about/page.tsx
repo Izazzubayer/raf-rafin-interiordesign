@@ -133,7 +133,7 @@ export default function AboutPage() {
             </motion.div>
             <h1 className="heading-1 text-slate mb-6">Crafting Spaces, Creating Experiences</h1>
             <p className="body-text text-lg text-neutral-700 leading-relaxed">
-              For over a decade, InteriorVista has been transforming residential spaces across Dhaka into stunning environments that reflect our clients' unique personalities and lifestyles.
+              For over a decade, InteriorVista has been transforming residential spaces across Dhaka into stunning environments that reflect our clients&apos; unique personalities and lifestyles.
             </p>
           </div>
         </div>
