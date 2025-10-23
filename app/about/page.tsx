@@ -155,13 +155,13 @@ export default function AboutPage() {
                   Founded in 2012, InteriorVista began with a simple mission: to create beautiful, functional spaces that enhance the way people live.
                 </p>
                 <p>
-                  What started as a small studio has grown into one of Dhaka's most trusted interior design firms, with a portfolio spanning luxury residences across the city's most prestigious neighborhoods.
+                  What started as a small studio has grown into one of Dhaka&apos;s most trusted interior design firms, with a portfolio spanning luxury residences across the city&apos;s most prestigious neighborhoods.
                 </p>
                 <p>
-                  Our approach combines timeless design principles with contemporary aesthetics, always prioritizing our clients' needs and the unique character of each space we work with.
+                  Our approach combines timeless design principles with contemporary aesthetics, always prioritizing our clients&apos; needs and the unique character of each space we work with.
                 </p>
                 <p>
-                  Today, we're proud to have completed over 150 projects, each one a testament to our commitment to excellence, innovation, and the transformative power of great design.
+                  Today, we&apos;re proud to have completed over 150 projects, each one a testament to our commitment to excellence, innovation, and the transformative power of great design.
                 </p>
               </div>
             </motion.div>
@@ -302,9 +302,9 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h2 className="heading-2 text-slate mb-6">Let's Create Something Beautiful Together</h2>
+            <h2 className="heading-2 text-slate mb-6">Let&apos;s Create Something Beautiful Together</h2>
             <p className="body-text text-lg mb-8">
-              Ready to transform your space? We'd love to hear about your project.
+              Ready to transform your space? We&apos;d love to hear about your project.
             </p>
             <a href="/contact" className="btn-primary">
               Get in Touch

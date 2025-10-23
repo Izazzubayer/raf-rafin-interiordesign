@@ -89,9 +89,9 @@ export default function ContactPage() {
                 Get in Touch
               </span>
             </motion.div>
-            <h1 className="heading-1 text-slate mb-6">Let's Start Your Project</h1>
+            <h1 className="heading-1 text-slate mb-6">Let&apos;s Start Your Project</h1>
             <p className="body-text text-lg text-neutral-700 leading-relaxed">
-              Have a project in mind? We'd love to hear from you. Fill out the form below or reach out directly using our contact information.
+              Have a project in mind? We&apos;d love to hear from you. Fill out the form below or reach out directly using our contact information.
             </p>
           </div>
         </div>

@@ -202,7 +202,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
               </svg>
               <blockquote className="text-xl md:text-2xl font-serif text-slate mb-6 italic">
-                "{project.testimonial.text}"
+                &ldquo;{project.testimonial.text}&rdquo;
               </blockquote>
               <cite className="text-sm text-neutral-600 not-italic">— {project.testimonial.author}</cite>
             </motion.div>
@@ -218,7 +218,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
           >
             <h2 className="heading-3 text-slate mb-6">Have a Project in Mind?</h2>
             <p className="body-text mb-8 max-w-2xl mx-auto">
-              Let's collaborate to create a space that perfectly reflects your style and needs.
+              Let&apos;s collaborate to create a space that perfectly reflects your style and needs.
             </p>
             <Link href="/contact" className="btn-primary">
               Start Your Project

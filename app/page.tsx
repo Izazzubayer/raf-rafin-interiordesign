@@ -214,13 +214,13 @@ export default function HomePage() {
                 <h2 className="heading-2 text-cream mb-6">Our Design Philosophy</h2>
                 <div className="space-y-4 text-lg text-neutral-300 leading-relaxed">
                   <p>
-                    At InteriorVista, we believe that exceptional interior design goes beyond aesthetics—it's about creating spaces that enhance daily living and reflect the unique personality of each client.
+                    At InteriorVista, we believe that exceptional interior design goes beyond aesthetics—it&apos;s about creating spaces that enhance daily living and reflect the unique personality of each client.
                   </p>
                   <p>
-                    With over a decade of experience across Dhaka's most prestigious neighborhoods, we've honed our ability to blend timeless elegance with contemporary functionality.
+                    With over a decade of experience across Dhaka&apos;s most prestigious neighborhoods, we&apos;ve honed our ability to blend timeless elegance with contemporary functionality.
                   </p>
                   <p>
-                    Our approach is collaborative, detail-oriented, and deeply committed to sustainability. Every project is a journey toward creating a space you'll love for years to come.
+                    Our approach is collaborative, detail-oriented, and deeply committed to sustainability. Every project is a journey toward creating a space you&apos;ll love for years to come.
                   </p>
                 </div>
                 <Link href="/about" className="btn-primary mt-8 inline-flex">
@@ -293,7 +293,7 @@ export default function HomePage() {
           >
             <h2 className="heading-2 text-slate-dark mb-6">Ready to Transform Your Space?</h2>
             <p className="text-lg text-neutral-800 leading-relaxed mb-8">
-              Let's discuss your project and bring your vision to life. Schedule a consultation with our design team today.
+              Let&apos;s discuss your project and bring your vision to life. Schedule a consultation with our design team today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="btn-primary">
