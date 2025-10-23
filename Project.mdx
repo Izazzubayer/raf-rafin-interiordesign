@@ -1,0 +1,191 @@
+### **Project Name**
+
+`InteriorVista — Modern Interior Design Portfolio Website`
+
+---
+
+### **Tech Stack**
+
+* **Framework:** Next.js 14 (App Router)
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS + Framer Motion for animations
+* **Image Optimization:** Next/Image
+* **State Management (for filters):** Zustand or React Context API
+* **Data Source:** Static JSON / CMS (e.g., Sanity, Contentful, or local mock data for now)
+
+---
+
+### **🎨 Brand Identity**
+
+**Agency Name:** *InteriorVista*
+**Tagline:** *Designing timeless interiors for modern living.*
+
+**Design Tone:** Minimalist • Elegant • Soft Neutrals (cream, beige, slate gray, gold accent)
+
+---
+
+### **🧭 Pages & Structure**
+
+#### **1. Homepage (`/`)**
+
+**Purpose:** Showcase hero section + agency intro + curated highlight of portfolio works.
+
+**Sections:**
+
+* **Header / Navbar:**
+
+  * Logo (InteriorVista)
+  * Navigation: Home | Portfolio | About | Contact
+  * Sticky on scroll, with subtle blur background effect.
+* **Hero Section:**
+
+  * Full-width image or looping video of an interior space
+  * Overlay text:
+
+    > “Transforming spaces into experiences.”
+    > *Interior design that reflects your story.*
+  * CTA Buttons: “View Portfolio” | “Get in Touch”
+* **Bento Grid Portfolio Preview:**
+
+  * Responsive grid (2–4 columns depending on screen)
+  * Each grid tile shows a high-quality project image
+  * Hover: show project name + location overlay
+  * Animation: Framer Motion fade/scale on scroll
+* **About Snippet:**
+
+  * A short paragraph about the firm’s design philosophy
+  * Button: “Learn More About Us”
+* **Testimonials Carousel (Optional):**
+
+  * Short quotes with client names and locations
+* **Footer:**
+
+  * Quick links, social media icons, contact email, and copyright
+
+---
+
+#### **2. Portfolio Page (`/portfolio`)**
+
+**Purpose:** Showcase all projects with filtering by **city** and **budget**.
+
+**Layout:**
+
+* **Left Sidebar (Filters):**
+
+  * Heading: “Filter by”
+  * **City Filter (checkboxes):**
+
+    * Mohammadpur
+    * Lalmatia
+    * Dhanmondi
+    * Gulshan
+    * Banani
+  * **Budget Filter (slider or dropdown):**
+
+    * Below 5L
+    * 5L–10L
+    * 10L–20L
+    * 20L+
+  * Reset Filters button
+* **Main Content (Portfolio Grid):**
+
+  * Bento-style grid displaying filtered projects
+  * Each card:
+
+    * High-res image
+    * Project title
+    * City
+    * Budget range
+    * “View Details” link (to `/portfolio/[slug]`)
+* **Hover Effects:**
+  Subtle zoom + overlay with “View Project →”
+
+---
+
+#### **3. Project Detail Page (`/portfolio/[slug]`)**
+
+* Large banner image
+* Project details (city, budget, completion year)
+* Description of design concept
+* Gallery section (lightbox-enabled)
+* Testimonial (optional)
+* “Back to Portfolio” button
+
+---
+
+#### **4. About Page (`/about`)**
+
+* Agency story
+* Team photos in a grid
+* Core values
+* Awards / press mentions (if any)
+
+---
+
+#### **5. Contact Page (`/contact`)**
+
+* Contact form (Name, Email, Message)
+* Office location (Google Map embed)
+* Social links
+
+---
+
+### **🧩 Components**
+
+* `<Navbar />`
+* `<HeroSection />`
+* `<BentoGrid />`
+* `<FilterSidebar />`
+* `<PortfolioCard />`
+* `<Footer />`
+* `<ContactForm />`
+* `<ProjectGallery />`
+
+---
+
+### **💾 Data Structure Example (JSON)**
+
+```json
+[
+  {
+    "id": 1,
+    "title": "Modern Apartment in Dhanmondi",
+    "city": "Dhanmondi",
+    "budget": "10L-20L",
+    "thumbnail": "/images/dhanmondi-apartment.jpg",
+    "slug": "modern-apartment-dhanmondi",
+    "gallery": ["/images/dhanmondi-1.jpg", "/images/dhanmondi-2.jpg"],
+    "description": "A minimalist apartment with Scandinavian-inspired textures and warm tones."
+  },
+  {
+    "id": 2,
+    "title": "Luxury Duplex in Gulshan",
+    "city": "Gulshan",
+    "budget": "20L+",
+    "thumbnail": "/images/gulshan-duplex.jpg",
+    "slug": "luxury-duplex-gulshan",
+    "gallery": ["/images/gulshan-1.jpg", "/images/gulshan-2.jpg"],
+    "description": "A premium residence designed for elegance and comfort with bespoke finishes."
+  }
+]
+```
+
+---
+
+### **✨ Visual Feel**
+
+* Bento grid like Apple’s or Awwwards-style layout
+* Large immersive images (Next/Image with `fill` and `object-cover`)
+* Smooth scroll + subtle parallax
+* Consistent spacing and clean typography (e.g., Inter or DM Sans)
+
+---
+
+### **🚀 Optional Enhancements**
+
+* CMS integration (Sanity/Contentful for easy portfolio updates)
+* SEO optimization (Next Head metadata)
+* Light/Dark mode toggle
+* Responsive layout (mobile-friendly filters)
+
+---
