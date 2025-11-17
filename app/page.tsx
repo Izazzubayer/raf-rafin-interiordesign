@@ -5,8 +5,9 @@ import { motion } from 'framer-motion'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Link from 'next/link'
+import { ArrowRight, Info, Rocket, Eye } from 'lucide-react'
 import HeroSection from '@/components/HeroSection'
-import BentoGrid from '@/components/BentoGrid'
+import ProjectGrid from '@/components/ProjectGrid'
 import { projects } from '@/lib/data'
 
 if (typeof window !== 'undefined') {
@@ -183,7 +184,7 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12"
+            className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-20"
           >
             <div>
               <h2 className="heading-2 text-slate-dark mb-4">Selected Work</h2>
@@ -191,12 +192,13 @@ export default function HomePage() {
                 Explore our carefully curated collection of residential projects that showcase our design philosophy and attention to detail.
               </p>
             </div>
-            <Link href="/portfolio" className="btn-secondary mt-6 md:mt-0">
+            <Link href="/portfolio" className="btn-secondary mt-6 md:mt-0 inline-flex items-center">
+              <Eye className="w-5 h-5 mr-2" />
               View All Projects
             </Link>
           </motion.div>
 
-          <BentoGrid projects={projects} featured />
+          <ProjectGrid projects={projects} featured />
         </div>
       </section>
 
@@ -214,7 +216,7 @@ export default function HomePage() {
                 <h2 className="heading-2 text-cream mb-6">Our Design Philosophy</h2>
                 <div className="space-y-4 text-lg text-neutral-300 leading-relaxed">
                   <p>
-                    At InteriorVista, we believe that exceptional interior design goes beyond aesthetics—it&apos;s about creating spaces that enhance daily living and reflect the unique personality of each client.
+                    At Umbrella Interiors, we believe that exceptional interior design goes beyond aesthetics—it&apos;s about creating spaces that enhance daily living and reflect the unique personality of each client.
                   </p>
                   <p>
                     With over a decade of experience across Dhaka&apos;s most prestigious neighborhoods, we&apos;ve honed our ability to blend timeless elegance with contemporary functionality.
@@ -223,7 +225,8 @@ export default function HomePage() {
                     Our approach is collaborative, detail-oriented, and deeply committed to sustainability. Every project is a journey toward creating a space you&apos;ll love for years to come.
                   </p>
                 </div>
-                <Link href="/about" className="btn-primary mt-8 inline-flex">
+                <Link href="/about" className="btn-primary mt-8 inline-flex items-center">
+                  <Info className="w-5 h-5 mr-2" />
                   Learn More About Us
                 </Link>
               </motion.div>
@@ -296,10 +299,12 @@ export default function HomePage() {
               Let&apos;s discuss your project and bring your vision to life. Schedule a consultation with our design team today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="btn-primary">
+              <Link href="/contact" className="btn-primary inline-flex items-center">
+                <Rocket className="w-5 h-5 mr-2" />
                 Start Your Project
               </Link>
-              <Link href="/portfolio" className="btn-secondary">
+              <Link href="/portfolio" className="btn-secondary inline-flex items-center">
+                <Eye className="w-5 h-5 mr-2" />
                 Explore Our Work
               </Link>
             </div>

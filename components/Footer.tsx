@@ -38,18 +38,18 @@ export default function Footer() {
             >
               <Link href="/" className="inline-block mb-4">
                 <span className="text-3xl font-serif font-light tracking-tight text-cream">
-                  Interior<span className="font-medium">Vista</span>
+                  Umbrella <span className="font-medium">Interiors</span>
                 </span>
               </Link>
               <p className="text-neutral-300 max-w-sm leading-relaxed mb-6">
-                Designing timeless interiors for modern living. Transforming spaces into experiences that reflect your unique story.
+                Designing timeless interiors for modern living. Designing Spaces That Shelter Your Vision.
               </p>
               <div className="flex items-center space-x-2 text-sm text-neutral-300">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <a href="mailto:hello@interiorvista.com" className="hover:text-gold transition-colors">
-                  hello@interiorvista.com
+                <a href="mailto:hello@umbrellainteriors.com" className="hover:text-gold transition-colors">
+                  hello@umbrellainteriors.com
                 </a>
               </div>
             </motion.div>
@@ -90,7 +90,7 @@ export default function Footer() {
           className="pt-8 border-t border-neutral-700 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
         >
           <p className="text-sm text-neutral-400">
-            © {currentYear} InteriorVista. All rights reserved.
+            © {currentYear} Umbrella Interiors. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm text-neutral-400">
             <Link href="#" className="hover:text-gold transition-colors">

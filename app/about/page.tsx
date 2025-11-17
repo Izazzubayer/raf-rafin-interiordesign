@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Image from 'next/image'
+import { Mail } from 'lucide-react'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
@@ -133,7 +134,7 @@ export default function AboutPage() {
             </motion.div>
             <h1 className="heading-1 text-slate mb-6">Crafting Spaces, Creating Experiences</h1>
             <p className="body-text text-lg text-neutral-700 leading-relaxed">
-              For over a decade, InteriorVista has been transforming residential spaces across Dhaka into stunning environments that reflect our clients&apos; unique personalities and lifestyles.
+              For over a decade, Umbrella Interiors has been transforming residential spaces across Dhaka into stunning environments that reflect our clients&apos; unique personalities and lifestyles.
             </p>
           </div>
         </div>
@@ -152,7 +153,7 @@ export default function AboutPage() {
               <h2 className="heading-2 text-slate mb-6">Our Story</h2>
               <div className="space-y-4 body-text text-neutral-700">
                 <p>
-                  Founded in 2012, InteriorVista began with a simple mission: to create beautiful, functional spaces that enhance the way people live.
+                  Founded in 2012, Umbrella Interiors began with a simple mission: to create beautiful, functional spaces that enhance the way people live.
                 </p>
                 <p>
                   What started as a small studio has grown into one of Dhaka&apos;s most trusted interior design firms, with a portfolio spanning luxury residences across the city&apos;s most prestigious neighborhoods.
@@ -175,7 +176,7 @@ export default function AboutPage() {
             >
               <Image
                 src="/images/Anisa Home New render PDF (dragged) 2.webp"
-                alt="InteriorVista studio"
+                alt="Umbrella Interiors studio"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -306,7 +307,8 @@ export default function AboutPage() {
             <p className="body-text text-lg mb-8">
               Ready to transform your space? We&apos;d love to hear about your project.
             </p>
-            <a href="/contact" className="btn-primary">
+            <a href="/contact" className="btn-primary inline-flex items-center">
+              <Mail className="w-5 h-5 mr-2" />
               Get in Touch
             </a>
           </motion.div>

@@ -9,6 +9,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { projects } from '@/lib/data'
 import { formatBudget } from '@/lib/utils'
+import { ArrowLeft, Rocket } from 'lucide-react'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
@@ -94,19 +95,12 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
             href="/portfolio"
             className="inline-flex items-center space-x-2 text-white hover:text-gold transition-colors duration-300 group"
           >
-            <svg
-              className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+            <motion.div
+              whileHover={{ x: -4 }}
+              transition={{ duration: 0.2 }}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10 19l-7-7m0 0l7-7m-7 7h18"
-              />
-            </svg>
+              <ArrowLeft className="w-5 h-5" />
+            </motion.div>
             <span className="font-medium">Back to Portfolio</span>
           </Link>
         </motion.div>
@@ -220,7 +214,8 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
             <p className="body-text mb-8 max-w-2xl mx-auto">
               Let&apos;s collaborate to create a space that perfectly reflects your style and needs.
             </p>
-            <Link href="/contact" className="btn-primary">
+            <Link href="/contact" className="btn-primary inline-flex items-center">
+              <Rocket className="w-5 h-5 mr-2" />
               Start Your Project
             </Link>
           </motion.div>

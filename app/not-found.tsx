@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { Home, Eye } from 'lucide-react'
 
 export default function NotFound() {
   return (
@@ -18,10 +19,12 @@ export default function NotFound() {
               The page you&apos;re looking for doesn&apos;t exist or has been moved.
             </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/" className="btn-primary">
+            <Link href="/" className="btn-primary inline-flex items-center">
+              <Home className="w-5 h-5 mr-2" />
               Go Home
             </Link>
-            <Link href="/portfolio" className="btn-secondary">
+            <Link href="/portfolio" className="btn-secondary inline-flex items-center">
+              <Eye className="w-5 h-5 mr-2" />
               View Portfolio
             </Link>
           </div>

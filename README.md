@@ -1,4 +1,4 @@
-# InteriorVista — Modern Interior Design Portfolio
+# Umbrella Interiors — Modern Interior Design Portfolio
 
 A premium interior design portfolio website built with Next.js 14, TypeScript, Tailwind CSS, GSAP, and Framer Motion.
 
@@ -158,7 +158,7 @@ npm start
 
 ## 📄 License
 
-© 2024 InteriorVista. All rights reserved.
+© 2024 Umbrella Interiors. All rights reserved.
 
 ## 👨‍💻 Development
 

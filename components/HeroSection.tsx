@@ -6,6 +6,15 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Link from 'next/link'
 import Image from 'next/image'
+import { ArrowRight, Calendar } from 'lucide-react'
+
+declare global {
+  interface Window {
+    Calendly: {
+      initPopupWidget: (options: { url: string }) => void
+    }
+  }
+}
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
@@ -17,6 +26,40 @@ export default function HeroSection() {
   const subtitleRef = useRef<HTMLParagraphElement>(null)
   const ctaRef = useRef<HTMLDivElement>(null)
   const imageRef = useRef<HTMLDivElement>(null)
+
+  // Calendly URL - Replace with your actual Calendly URL when ready
+  // Format: https://calendly.com/your-username/event-type
+  // Set this in your .env.local file: NEXT_PUBLIC_CALENDLY_URL=https://calendly.com/your-username/30min
+  const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/your-username/30min'
+
+  const handleBookAppointment = () => {
+    if (typeof window === 'undefined') return
+
+    // Check if Calendly is already loaded
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: calendlyUrl,
+      })
+      return
+    }
+
+    // Wait for Calendly to load (max 5 seconds)
+    let attempts = 0
+    const maxAttempts = 50
+    const checkCalendly = setInterval(() => {
+      attempts++
+      if (window.Calendly) {
+        clearInterval(checkCalendly)
+        window.Calendly.initPopupWidget({
+          url: calendlyUrl,
+        })
+      } else if (attempts >= maxAttempts) {
+        clearInterval(checkCalendly)
+        // Fallback: open Calendly in new tab if widget fails to load
+        window.open(calendlyUrl, '_blank')
+      }
+    }, 100)
+  }
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -99,7 +142,7 @@ export default function HeroSection() {
             ref={titleRef}
             className="heading-hero text-cream mb-6 md:mb-8 max-w-3xl text-balance"
           >
-            Transforming spaces into experiences
+            Designing Spaces That Shelter Your Vision
           </h1>
 
           <p
@@ -110,28 +153,26 @@ export default function HeroSection() {
           </p>
 
           <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4">
-            <Link href="/portfolio" className="btn-primary group">
+            <Link href="/portfolio" className="btn-primary group inline-flex items-center">
               <span>View Portfolio</span>
-              <motion.svg
-                className="w-5 h-5 ml-2 inline-block"
+              <motion.div
                 initial={{ x: 0 }}
                 whileHover={{ x: 5 }}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+                transition={{ duration: 0.2 }}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </motion.svg>
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </motion.div>
             </Link>
 
-            <Link href="/contact" className="btn-secondary">
-              Get in Touch
-            </Link>
+            <motion.button
+              onClick={handleBookAppointment}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="btn-secondary inline-flex items-center"
+            >
+              <Calendar className="w-5 h-5 mr-2" />
+              Book Appointment
+            </motion.button>
           </div>
         </div>
       </div>

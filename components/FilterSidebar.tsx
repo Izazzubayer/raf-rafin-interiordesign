@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { useFilterStore } from '@/lib/store'
 import { cities, budgetRanges } from '@/lib/data'
 import { cn } from '@/lib/utils'
+import { X } from 'lucide-react'
 
 export default function FilterSidebar() {
   const { selectedCities, selectedBudgets, toggleCity, toggleBudget, resetFilters } = useFilterStore()
@@ -22,9 +23,10 @@ export default function FilterSidebar() {
         {hasActiveFilters && (
           <button
             onClick={resetFilters}
-            className="text-sm text-gold hover:text-gold-dark transition-colors duration-300"
+            className="text-sm text-gold hover:text-gold-dark transition-colors duration-300 inline-flex items-center space-x-1"
           >
-            Clear All
+            <X className="w-4 h-4" />
+            <span>Clear All</span>
           </button>
         )}
       </div>

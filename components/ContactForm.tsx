@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useForm } from 'react-hook-form'
+import { Send } from 'lucide-react'
 
 interface FormData {
   name: string
@@ -112,8 +113,9 @@ export default function ContactForm() {
             type="submit"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="btn-primary w-full md:w-auto"
+            className="btn-primary w-full md:w-auto inline-flex items-center"
           >
+            <Send className="w-5 h-5 mr-2" />
             Send Message
           </motion.button>
         </motion.div>
@@ -144,10 +146,10 @@ export default function ContactForm() {
           Prefer to email directly?
         </p>
         <a
-          href="mailto:hello@interiorvista.com"
+          href="mailto:hello@umbrellainteriors.com"
           className="text-gold hover:text-gold-dark font-medium transition-colors duration-300"
         >
-          hello@interiorvista.com
+          hello@umbrellainteriors.com
         </a>
       </motion.div>
     </div>

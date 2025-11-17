@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Project } from '@/lib/data'
 import { formatBudget } from '@/lib/utils'
+import { ArrowRight } from 'lucide-react'
 
 interface PortfolioCardProps {
   project: Project
@@ -48,9 +49,10 @@ export default function PortfolioCard({ project, index }: PortfolioCardProps) {
             <motion.div
               initial={{ y: 20 }}
               whileHover={{ y: 0 }}
-              className="btn-primary"
+              className="btn-primary inline-flex items-center"
             >
-              View Details →
+              View Details
+              <ArrowRight className="w-5 h-5 ml-2" />
             </motion.div>
           </div>
         </div>

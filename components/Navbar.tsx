@@ -48,7 +48,7 @@ export default function Navbar() {
                 className="transition-all duration-300"
               >
                 <span className="text-2xl md:text-3xl font-serif font-light tracking-tight text-slate-dark group-hover:text-gold transition-colors duration-300">
-                  Interior<span className="font-medium">Vista</span>
+                  Umbrella <span className="font-medium">Interiors</span>
                 </span>
               </motion.div>
             </Link>

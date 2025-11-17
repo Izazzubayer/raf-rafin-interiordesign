@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ScrollProgress from '@/components/ScrollProgress'
+import FloatingChat from '@/components/FloatingChat'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -18,12 +20,12 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'InteriorVista — Designing Timeless Interiors for Modern Living',
+  title: 'Umbrella Interiors — Designing Timeless Interiors for Modern Living',
   description: 'Premium interior design studio in Dhaka, specializing in residential spaces that blend elegance with functionality.',
   keywords: ['interior design', 'Dhaka', 'Bangladesh', 'residential design', 'modern interiors', 'luxury homes'],
-  authors: [{ name: 'InteriorVista' }],
+  authors: [{ name: 'Umbrella Interiors' }],
   openGraph: {
-    title: 'InteriorVista — Designing Timeless Interiors',
+    title: 'Umbrella Interiors — Designing Timeless Interiors',
     description: 'Transform your space with award-winning interior design.',
     type: 'website',
   },
@@ -37,10 +39,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body>
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="lazyOnload"
+        />
         <ScrollProgress />
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <FloatingChat />
       </body>
     </html>
   )
