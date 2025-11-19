@@ -1,4 +1,4 @@
-# Animation Guide - InteriorVista
+# Animation Guide - Umbrella Interiors
 
 ## Overview
 

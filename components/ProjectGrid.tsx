@@ -76,13 +76,13 @@ export default function ProjectGrid({ projects, featured = false }: ProjectGridP
             <div className="space-y-4">
               {/* Chips/Labels */}
               <div className="flex flex-wrap items-center gap-3">
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gold/10 text-gold border border-gold/20">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gold/10 text-gold border border-gold/20">
                   {project.city}
                 </span>
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate/10 text-slate border border-slate/20">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-slate/10 text-slate border border-slate/20">
                   {formatBudget(project.budget)}
                 </span>
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-neutral-200 text-neutral-700">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-neutral-200 text-neutral-700">
                   {project.year}
                 </span>
               </div>

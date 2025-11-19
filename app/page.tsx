@@ -5,9 +5,10 @@ import { motion } from 'framer-motion'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Link from 'next/link'
-import { ArrowRight, Info, Rocket, Eye } from 'lucide-react'
+import { ArrowRight, Info, Rocket, Eye, Home, Building2, Layout, ShoppingBag, MessageSquare, Palette, DraftingCompass, Sparkles, Wrench, Lightbulb, Paintbrush } from 'lucide-react'
 import HeroSection from '@/components/HeroSection'
 import ProjectGrid from '@/components/ProjectGrid'
+import { InfiniteMovingCards } from '@/components/ui/infinite-moving-cards'
 import { projects } from '@/lib/data'
 
 if (typeof window !== 'undefined') {
@@ -19,27 +20,19 @@ export default function HomePage() {
   const statsRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    // Wait for DOM to be ready
+    const timer = setTimeout(() => {
     const ctx = gsap.context(() => {
-      // About section fade-in
-      gsap.from('.about-content', {
-        scrollTrigger: {
-          trigger: aboutRef.current,
-          start: 'top 80%',
-        },
-        y: 60,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-      })
-
       // Stats counter animation
       const statNumbers = document.querySelectorAll('.stat-number')
+        if (statNumbers.length > 0 && statsRef.current) {
       statNumbers.forEach((stat) => {
         const target = parseInt(stat.getAttribute('data-target') || '0')
         gsap.to(stat, {
           scrollTrigger: {
             trigger: statsRef.current,
             start: 'top 80%',
+                toggleActions: 'play none none none',
           },
           textContent: target,
           duration: 2,
@@ -50,22 +43,19 @@ export default function HomePage() {
           },
         })
       })
+        }
 
-      // Stagger reveal for service cards
-      gsap.from('.service-card', {
-        scrollTrigger: {
-          trigger: '.services-grid',
-          start: 'top 80%',
-        },
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: 'power3.out',
+        // Refresh ScrollTrigger after animations are set up
+        ScrollTrigger.refresh()
       })
-    })
 
-    return () => ctx.revert()
+      return () => {
+        clearTimeout(timer)
+        ctx.revert()
+      }
+    }, 100)
+
+    return () => clearTimeout(timer)
   }, [])
 
   const stats = [
@@ -153,26 +143,155 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center max-w-3xl mx-auto mb-16"
+            className="mb-16"
           >
             <h2 className="heading-2 text-slate mb-6">Our Expertise</h2>
-            <p className="text-lg text-neutral-800 leading-relaxed">
+            <p className="text-lg text-neutral-800 leading-relaxed max-w-3xl">
               We offer comprehensive interior design services, from initial concept to final installation, ensuring every detail reflects your vision.
             </p>
           </motion.div>
 
           <div className="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <div
+              <motion.div
                 key={service.title}
+                initial={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
                 className="service-card bg-white rounded-sm p-8 hover:shadow-xl transition-shadow duration-500"
               >
                 <div className="text-gold mb-4">{service.icon}</div>
                 <h3 className="text-xl font-serif text-slate-dark mb-3">{service.title}</h3>
                 <p className="text-sm text-neutral-700 leading-relaxed">{service.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* What We Do Section */}
+      <section className="section-spacing bg-white">
+        <div className="container-width section-padding">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mb-16"
+          >
+            <h2 className="heading-2 text-slate-dark mb-6">What We Do</h2>
+            <p className="text-lg text-neutral-800 leading-relaxed max-w-3xl">
+              Comprehensive interior design services tailored to transform your space into an environment that inspires, functions beautifully, and reflects your unique vision.
+            </p>
+          </motion.div>
+
+          <div className="what-we-do-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {[
+              {
+                title: 'Residential Interior Design',
+                description: 'Warm, curated, functional living spaces that reflect your personality and lifestyle. From concept to completion, we transform houses into homes.',
+                icon: <Home className="w-8 h-8" strokeWidth={1.5} />,
+                features: ['Complete home design', 'Room transformations', 'Custom solutions'],
+              },
+              {
+                title: 'Commercial Interiors',
+                description: 'Modern, branded environments that elevate your business identity. Create spaces that inspire productivity and reflect your brand values.',
+                icon: <Building2 className="w-8 h-8" strokeWidth={1.5} />,
+                features: ['Office spaces', 'Retail design', 'Brand integration'],
+              },
+              {
+                title: 'Space Planning & 3D Visualization',
+                description: 'From concept to execution with full clarity. Detailed layouts, realistic renderings, and comprehensive plans ensure perfect execution.',
+                icon: <Layout className="w-8 h-8" strokeWidth={1.5} />,
+                features: ['Floor plans', '3D renderings', 'Virtual walkthroughs'],
+              },
+              {
+                title: 'Material & Furniture Curation',
+                description: 'A premium selection tailored to your lifestyle. We source the finest materials and furniture pieces that combine beauty with functionality.',
+                icon: <ShoppingBag className="w-8 h-8" strokeWidth={1.5} />,
+                features: ['Premium sourcing', 'Custom furniture', 'Quality assurance'],
+              },
+              {
+                title: 'Renovation & Remodeling',
+                description: 'Transform existing spaces with modern updates and expert styling. We handle structural changes while maintaining functionality and style.',
+                icon: <Wrench className="w-8 h-8" strokeWidth={1.5} />,
+                features: ['Complete renovations', 'Kitchen & bathroom', 'Structural updates'],
+              },
+              {
+                title: 'Lighting Design',
+                description: 'Illuminate your space with thoughtfully designed lighting that enhances ambiance, functionality, and aesthetics for the perfect atmosphere.',
+                icon: <Lightbulb className="w-8 h-8" strokeWidth={1.5} />,
+                features: ['Ambient lighting', 'Task lighting', 'Smart integration'],
+              },
+            ].map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+                className="what-we-do-card group"
+              >
+                <div className="bg-white rounded-sm p-8 hover:shadow-xl transition-all duration-500 border border-neutral-100 hover:border-gold/30 h-full flex flex-col">
+                  {/* Icon with background */}
+                  <div className="w-16 h-16 bg-gold/10 rounded-sm flex items-center justify-center text-gold mb-6 group-hover:bg-gold/20 transition-colors duration-300">
+                    {service.icon}
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 className="text-xl font-serif text-slate-dark mb-3">{service.title}</h3>
+                  
+                  {/* Description */}
+                  <p className="text-sm text-neutral-700 leading-relaxed mb-6 flex-grow">{service.description}</p>
+                  
+                  {/* Features */}
+                  <div className="space-y-2 pt-4 border-t border-neutral-100">
+                    {service.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center text-sm text-neutral-600">
+                        <svg
+                          className="w-3 h-3 text-gold mr-2 flex-shrink-0"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex items-center gap-6"
+          >
+            <Link href="/services" className="btn-secondary inline-flex items-center group">
+              <span>View All Services</span>
+              <motion.div
+                initial={{ x: 0 }}
+                whileHover={{ x: 5 }}
+                transition={{ duration: 0.2 }}
+              >
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </motion.div>
+            </Link>
+            <p className="text-sm text-neutral-600">
+              Explore our complete range of interior design services
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -202,84 +321,194 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About Snippet Section */}
-      <section ref={aboutRef} className="section-spacing bg-slate-dark text-neutral-100">
+      {/* Our Design Process Section */}
+      <section ref={aboutRef} className="section-spacing bg-beige">
         <div className="container-width section-padding">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="about-content">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-              >
-                <h2 className="heading-2 text-cream mb-6">Our Design Philosophy</h2>
-                <div className="space-y-4 text-lg text-neutral-300 leading-relaxed">
-                  <p>
-                    At Umbrella Interiors, we believe that exceptional interior design goes beyond aesthetics—it&apos;s about creating spaces that enhance daily living and reflect the unique personality of each client.
-                  </p>
-                  <p>
-                    With over a decade of experience across Dhaka&apos;s most prestigious neighborhoods, we&apos;ve honed our ability to blend timeless elegance with contemporary functionality.
-                  </p>
-                  <p>
-                    Our approach is collaborative, detail-oriented, and deeply committed to sustainability. Every project is a journey toward creating a space you&apos;ll love for years to come.
-                  </p>
-                </div>
-                <Link href="/about" className="btn-primary mt-8 inline-flex items-center">
-                  <Info className="w-5 h-5 mr-2" />
-                  Learn More About Us
-                </Link>
+            className="mb-16"
+          >
+            <h2 className="heading-2 text-slate-dark mb-6">Our Design Process</h2>
+            <p className="text-lg text-neutral-800 leading-relaxed max-w-3xl">
+              A structured approach that ensures your project is completed on time, within budget, and exceeds your expectations. We guide you through every step with transparency and expertise.
+            </p>
               </motion.div>
-            </div>
 
+          {/* Horizontal Timeline */}
+          <div className="relative">
+            {/* Timeline Line - Hidden on mobile, visible on desktop */}
+            <div className="hidden lg:block absolute top-20 left-0 right-0 h-0.5 bg-gold/20" style={{ top: '5rem' }} />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+              {[
+                {
+                  number: '01',
+                  title: 'Consultation',
+                  description: 'Understanding your needs and vision. We begin with a comprehensive consultation to understand your lifestyle, preferences, budget, and goals for the space.',
+                  icon: <MessageSquare className="w-8 h-8" strokeWidth={1.5} />,
+                  details: [
+                    'Initial meeting & site visit',
+                    'Lifestyle & needs assessment',
+                    'Budget & timeline discussion',
+                    'Project scope definition',
+                  ],
+                },
+                {
+                  number: '02',
+                  title: 'Concept & Moodboard',
+                  description: 'Crafting a personalized interior language. We develop design concepts and create moodboards that capture the aesthetic direction and feel of your space.',
+                  icon: <Palette className="w-8 h-8" strokeWidth={1.5} />,
+                  details: [
+                    'Design concept development',
+                    'Moodboard creation',
+                    'Style direction selection',
+                    'Initial material exploration',
+                  ],
+                },
+                {
+                  number: '03',
+                  title: 'Design Development',
+                  description: 'Layouts, materials, colors, lighting — everything. We create detailed floor plans, select materials, develop color palettes, and plan lighting schemes.',
+                  icon: <DraftingCompass className="w-8 h-8" strokeWidth={1.5} />,
+                  details: [
+                    'Detailed floor plans',
+                    '3D visualizations',
+                    'Material & color selection',
+                    'Lighting design',
+                    'Furniture specifications',
+                  ],
+                },
+                {
+                  number: '04',
+                  title: 'Execution & Styling',
+                  description: 'We bring your dream space to life. Our team manages procurement, coordinates installations, and handles final styling to ensure every detail is perfect.',
+                  icon: <Sparkles className="w-8 h-8" strokeWidth={1.5} />,
+                  details: [
+                    'Procurement & sourcing',
+                    'Installation coordination',
+                    'Quality control',
+                    'Final styling & accessories',
+                    'Project handover',
+                  ],
+                },
+              ].map((step, index) => (
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="grid grid-cols-2 gap-4"
-            >
-              <div className="space-y-4">
-                <div className="bg-gold/10 backdrop-blur-sm p-6 rounded-sm">
-                  <div className="flex items-center space-x-3 mb-3">
-                    <svg className="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                    <h4 className="text-gold font-medium">Attention to Detail</h4>
+                  key={step.number}
+                  initial={{ opacity: 1, y: 0 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-100px' }}
+                  transition={{ delay: index * 0.1, duration: 0.6 }}
+                  className="process-step relative"
+                >
+                  <div className="bg-white rounded-sm p-8 hover:shadow-lg transition-all duration-500 h-full">
+                    {/* Step Number & Icon */}
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="text-4xl font-serif text-gold/30">{step.number}</div>
+                      <div className="text-gold">{step.icon}</div>
                   </div>
-                  <p className="text-sm text-neutral-400">Every element is carefully considered</p>
-                </div>
-                <div className="bg-gold/10 backdrop-blur-sm p-6 rounded-sm">
-                  <div className="flex items-center space-x-3 mb-3">
-                    <svg className="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+
+                    {/* Title */}
+                    <h3 className="text-xl font-serif text-slate-dark mb-4">{step.title}</h3>
+
+                    {/* Description */}
+                    <p className="text-sm text-neutral-700 leading-relaxed mb-6">{step.description}</p>
+
+                    {/* Details List */}
+                    <ul className="space-y-2">
+                      {step.details.map((detail, idx) => (
+                        <li key={idx} className="flex items-start text-sm text-neutral-600">
+                          <svg
+                            className="w-3 h-3 text-gold mr-2 mt-1 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M5 13l4 4L19 7"
+                            />
                     </svg>
-                    <h4 className="text-gold font-medium">Client-Centric</h4>
+                          <span>{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <p className="text-sm text-neutral-400">Your vision guides our design</p>
+                </motion.div>
+              ))}
                 </div>
               </div>
-              <div className="space-y-4 mt-8">
-                <div className="bg-gold/10 backdrop-blur-sm p-6 rounded-sm">
-                  <div className="flex items-center space-x-3 mb-3">
-                    <svg className="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <h4 className="text-gold font-medium">Timeless Design</h4>
                   </div>
-                  <p className="text-sm text-neutral-400">Spaces that age beautifully</p>
-                </div>
-                <div className="bg-gold/10 backdrop-blur-sm p-6 rounded-sm">
-                  <div className="flex items-center space-x-3 mb-3">
-                    <svg className="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                    </svg>
-                    <h4 className="text-gold font-medium">Quality Craftsmanship</h4>
-                  </div>
-                  <p className="text-sm text-neutral-400">Premium materials and finishes</p>
-                </div>
-              </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="section-spacing bg-white">
+        <div className="container-width section-padding">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mb-16"
+          >
+            <h2 className="heading-2 text-slate-dark mb-6">What Our Clients Say</h2>
+            <p className="text-lg text-neutral-800 leading-relaxed max-w-3xl">
+              Don&apos;t just take our word for it. Here&apos;s what our clients have to say about working with Umbrella Interiors.
+            </p>
             </motion.div>
+
+          <div className="relative">
+            <InfiniteMovingCards
+              items={[
+                {
+                  quote: "The team at Umbrella Interiors transformed our home beyond our expectations. Every detail was thoughtfully considered, and the final result is absolutely stunning. We couldn't be happier with our new space.",
+                  name: "Anisa Rahman",
+                  title: "Residential Design • Dhanmondi",
+                },
+                {
+                  quote: "Working with Umbrella Interiors was a seamless experience from start to finish. Their attention to detail and ability to understand our vision made the entire process enjoyable. Our office space now truly reflects our brand identity.",
+                  name: "Karim Hassan",
+                  title: "Commercial Interiors • Gulshan",
+                },
+                {
+                  quote: "The 3D visualizations helped us see exactly what our space would look like before any work began. The team's professionalism and creativity exceeded our expectations. Highly recommend their services!",
+                  name: "Nadia Khan",
+                  title: "Space Planning • Banani",
+                },
+                {
+                  quote: "Umbrella Interiors curated the most beautiful selection of materials and furniture for our home. Their expertise in sourcing premium pieces made all the difference. The quality is exceptional.",
+                  name: "Reza Mahmud",
+                  title: "Material Curation • Lalmatia",
+                },
+                {
+                  quote: "From the initial consultation to the final styling, the entire process was handled with such care and professionalism. Our renovated kitchen is now the heart of our home, exactly as we envisioned.",
+                  name: "Fatima Ahmed",
+                  title: "Renovation • Mohammadpur",
+                },
+                {
+                  quote: "The lighting design they created completely transformed the ambiance of our space. It's amazing how the right lighting can make such a difference. We're thrilled with the results!",
+                  name: "Tariq Islam",
+                  title: "Lighting Design • Gulshan",
+                },
+                {
+                  quote: "What impressed us most was how they balanced our budget with our vision. They found creative solutions that didn't compromise on style or quality. Truly exceptional work.",
+                  name: "Sadia Chowdhury",
+                  title: "Residential Design • Dhanmondi",
+                },
+                {
+                  quote: "The project management was flawless. They coordinated everything seamlessly, kept us informed at every step, and delivered on time. Our new space is everything we dreamed of and more.",
+                  name: "Ahmed Ali",
+                  title: "Complete Home Design • Banani",
+                },
+              ]}
+              direction="right"
+              speed="slow"
+              pauseOnHover={true}
+            />
           </div>
         </div>
       </section>

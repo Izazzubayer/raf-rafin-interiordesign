@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
@@ -9,6 +10,7 @@ import { cn } from '@/lib/utils'
 const navItems = [
   { name: 'Home', href: '/' },
   { name: 'Portfolio', href: '/portfolio' },
+  { name: 'Services', href: '/services' },
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
 ]
@@ -17,15 +19,26 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
+  const isHomePage = pathname === '/'
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
+      if (isHomePage) {
+        // On homepage, show background only after scrolling past hero section (100vh)
+        const heroHeight = window.innerHeight
+        setIsScrolled(window.scrollY > heroHeight - 100)
+      } else {
+        // On other pages, show background after small scroll
+        setIsScrolled(window.scrollY > 20)
+      }
     }
+
+    // Check initial state
+    handleScroll()
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [isHomePage])
 
   return (
     <>
@@ -35,7 +48,11 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
-          isScrolled ? 'backdrop-blur-nav shadow-sm py-4' : 'bg-cream/80 backdrop-blur-sm py-6'
+          isScrolled 
+            ? 'backdrop-blur-nav shadow-sm py-4 bg-cream/95' 
+            : isHomePage 
+              ? 'bg-transparent py-6' 
+              : 'bg-cream/80 backdrop-blur-sm py-6'
         )}
       >
         <nav className="container-width section-padding">
@@ -45,9 +62,23 @@ export default function Navbar() {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="transition-all duration-300"
+                className="flex items-center gap-3 transition-all duration-300"
               >
-                <span className="text-2xl md:text-3xl font-serif font-light tracking-tight text-slate-dark group-hover:text-gold transition-colors duration-300">
+                <Image
+                  src="/umbrellainterior.png"
+                  alt="Umbrella Interiors"
+                  width={40}
+                  height={40}
+                  className={cn(
+                    "h-8 md:h-10 w-auto transition-opacity duration-300",
+                    isScrolled || !isHomePage ? "opacity-100" : "opacity-90"
+                  )}
+                  priority
+                />
+                <span className={cn(
+                  "text-2xl md:text-3xl font-serif font-light tracking-tight group-hover:text-gold transition-colors duration-300",
+                  isScrolled || !isHomePage ? "text-slate-dark" : "text-cream"
+                )}>
                   Umbrella <span className="font-medium">Interiors</span>
                 </span>
               </motion.div>
@@ -66,7 +97,11 @@ export default function Navbar() {
                     <span
                       className={cn(
                         'text-sm uppercase tracking-wider font-medium transition-colors duration-300',
-                        isActive ? 'text-gold' : 'text-slate-dark hover:text-gold'
+                        isActive 
+                          ? 'text-gold' 
+                          : isScrolled || !isHomePage 
+                            ? 'text-slate-dark hover:text-gold' 
+                            : 'text-cream hover:text-gold'
                       )}
                     >
                       {item.name}
@@ -92,15 +127,24 @@ export default function Navbar() {
               <div className="w-6 flex flex-col items-end space-y-1.5">
                 <motion.span
                   animate={isMobileMenuOpen ? { rotate: 45, y: 8, width: '100%' } : { rotate: 0, y: 0, width: '100%' }}
-                  className="block h-0.5 bg-slate origin-center transition-all"
+                  className={cn(
+                    "block h-0.5 origin-center transition-all",
+                    isScrolled || !isHomePage ? "bg-slate" : "bg-cream"
+                  )}
                 />
                 <motion.span
                   animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-                  className="block h-0.5 w-4/5 bg-slate"
+                  className={cn(
+                    "block h-0.5 w-4/5",
+                    isScrolled || !isHomePage ? "bg-slate" : "bg-cream"
+                  )}
                 />
                 <motion.span
                   animate={isMobileMenuOpen ? { rotate: -45, y: -8, width: '100%' } : { rotate: 0, y: 0, width: '100%' }}
-                  className="block h-0.5 bg-slate origin-center transition-all"
+                  className={cn(
+                    "block h-0.5 origin-center transition-all",
+                    isScrolled || !isHomePage ? "bg-slate" : "bg-cream"
+                  )}
                 />
               </div>
             </button>

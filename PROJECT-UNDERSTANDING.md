@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**InteriorVista** is a premium interior design portfolio website built for showcasing residential interior design projects. The site is designed for a design studio based in Dhaka, Bangladesh, specializing in luxury residential spaces.
+**Umbrella Interiors** is a premium interior design portfolio website built for showcasing residential interior design projects. The site is designed for a design studio based in Dhaka, Bangladesh, specializing in luxury residential spaces.
 
 ### Purpose
 - Showcase portfolio of interior design projects
@@ -441,7 +441,7 @@ Uses Zustand for lightweight, performant state management.
 ### Site Structure
 
 ```
-InteriorVista Website
+Umbrella Interiors Website
 │
 ├── / (Homepage)
 │   ├── Hero Section
@@ -590,5 +590,5 @@ Navbar (All Pages)
 ---
 
 *Last Updated: Based on codebase analysis*
-*Project: InteriorVista - Interior Design Portfolio Website*
+*Project: Umbrella Interiors - Interior Design Portfolio Website*
 

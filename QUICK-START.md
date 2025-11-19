@@ -186,7 +186,7 @@ Need help? Check:
 
 ---
 
-**Your InteriorVista website is production-ready! 🎉**
+**Your Umbrella Interiors website is production-ready! 🎉**
 
 Start with `npm run dev` and make it yours!
 

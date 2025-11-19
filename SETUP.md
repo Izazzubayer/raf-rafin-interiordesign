@@ -1,4 +1,4 @@
-# InteriorVista Setup Guide
+# Umbrella Interiors Setup Guide
 
 ## Quick Start
 
@@ -185,7 +185,7 @@ For issues or questions:
 
 ---
 
-**Your InteriorVista website is ready! 🎉**
+**Your Umbrella Interiors website is ready! 🎉**
 
 Run `npm run dev` and start customizing!
 

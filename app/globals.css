@@ -140,6 +140,32 @@
   .animation-delay-800 {
     animation-delay: 800ms;
   }
+
+  /* Infinite scroll animation */
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - 1rem));
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll var(--animation-duration, 40s) linear infinite var(--animation-direction, forwards);
+  }
+
+  /* Masonry layout support */
+  .break-inside-avoid {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Ensure fade-in sections are visible by default */
+  .fade-in-section {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
 }
 
 /* Custom scrollbar */

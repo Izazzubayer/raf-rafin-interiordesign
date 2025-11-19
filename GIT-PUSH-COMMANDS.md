@@ -27,7 +27,7 @@ git config user.name "Izaz Zubayer"
 git add .
 
 # Create initial commit
-git commit -m "Initial commit: InteriorVista portfolio website with GSAP animations"
+git commit -m "Initial commit: Umbrella Interiors portfolio website with GSAP animations"
 
 # Create the repository on GitHub and push
 # (You'll need to create the repo on GitHub first, OR use GitHub CLI)

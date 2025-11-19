@@ -114,7 +114,7 @@ export default function HeroSection() {
       {/* Background Image with Parallax */}
       <div ref={imageRef} className="absolute inset-0 -z-10">
         <Image
-          src="/images/Anisa Home New render PDF (dragged).webp"
+          src="/images/2150794637.jpg"
           alt="Modern interior design"
           fill
           priority

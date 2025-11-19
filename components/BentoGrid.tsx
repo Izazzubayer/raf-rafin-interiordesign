@@ -84,11 +84,11 @@ export default function BentoGrid({ projects, featured = false }: BentoGridProps
                     transition={{ delay: index * 0.1 + 0.2 }}
                   >
                     <div className="flex items-center space-x-3 mb-3">
-                      <span className="text-xs uppercase tracking-widest text-gold font-medium">
+                      <span className="text-sm uppercase tracking-widest text-gold font-medium">
                         {project.city}
                       </span>
                       <span className="w-1 h-1 bg-gold rounded-full" />
-                      <span className="text-xs text-neutral-300">{project.year}</span>
+                      <span className="text-sm text-neutral-300">{project.year}</span>
                     </div>
                     <h3 className="text-xl md:text-2xl font-serif text-white mb-2 group-hover:text-gold transition-colors duration-300">
                       {project.title}

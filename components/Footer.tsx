@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 const footerLinks = {
@@ -36,7 +37,14 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <Link href="/" className="inline-block mb-4">
+              <Link href="/" className="inline-flex items-center gap-3 mb-4 group">
+                <Image
+                  src="/umbrellainterior.png"
+                  alt="Umbrella Interiors"
+                  width={50}
+                  height={50}
+                  className="h-10 md:h-12 w-auto"
+                />
                 <span className="text-3xl font-serif font-light tracking-tight text-cream">
                   Umbrella <span className="font-medium">Interiors</span>
                 </span>
@@ -93,10 +101,10 @@ export default function Footer() {
             © {currentYear} Umbrella Interiors. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm text-neutral-400">
-            <Link href="#" className="hover:text-gold transition-colors">
+            <Link href="/privacy" className="hover:text-gold transition-colors">
               Privacy Policy
             </Link>
-            <Link href="#" className="hover:text-gold transition-colors">
+            <Link href="/terms" className="hover:text-gold transition-colors">
               Terms of Service
             </Link>
           </div>
