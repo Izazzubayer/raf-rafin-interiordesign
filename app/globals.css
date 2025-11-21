@@ -27,6 +27,7 @@
   body {
     @apply bg-cream text-neutral-900 antialiased;
     font-feature-settings: "kern" 1, "liga" 1;
+    font-family: "Alegreya", serif;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -101,6 +102,12 @@
     font-optical-sizing: auto;
     font-style: normal;
     font-variation-settings: "wdth" 100;
+  }
+
+  .alegreya-default {
+    font-family: "Alegreya", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
   }
 
   .body-text {
