@@ -36,7 +36,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        serif: ['var(--font-playfair)', 'Georgia', 'serif'],
+        serif: ['"Advent Pro"', 'var(--font-inter)', 'sans-serif'],
       },
       fontSize: {
         'hero': ['clamp(2.5rem, 8vw, 5rem)', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
@@ -84,4 +84,3 @@ const config: Config = {
   plugins: [],
 }
 export default config
-
