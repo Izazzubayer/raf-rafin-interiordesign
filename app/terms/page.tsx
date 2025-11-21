@@ -546,10 +546,10 @@ export default function TermsOfServicePage() {
                   </a>
                 </p>
                 <p className="text-slate font-medium">
-                  <strong>Phone:</strong> +880 1234-567890
+                  <strong>Phone:</strong> +880 1626 436389
                 </p>
                 <p className="text-slate font-medium">
-                  <strong>Address:</strong> Gulshan, Dhaka, Bangladesh
+                  <strong>Address:</strong> Iqbal Road, Mohammadpur, Bangladesh
                 </p>
               </div>
             </div>

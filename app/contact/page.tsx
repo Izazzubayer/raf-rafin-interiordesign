@@ -46,7 +46,7 @@ export default function ContactPage() {
     },
     {
       title: 'Phone',
-      value: '+880 1234-567890',
+      value: '+880 1626 436389',
       link: 'tel:+8801234567890',
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -56,7 +56,7 @@ export default function ContactPage() {
     },
     {
       title: 'Office',
-      value: 'Gulshan, Dhaka, Bangladesh',
+      value: 'Iqbal Road, Mohammadpur, Bangladesh',
       link: null,
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -68,7 +68,7 @@ export default function ContactPage() {
   ]
 
   const socialLinks = [
-    { name: 'Facebook', href: 'https://facebook.com', icon: 'facebook' },
+    { name: 'Facebook', href: 'https://www.facebook.com/umbrellaInteriorsBD', icon: 'facebook' },
     { name: 'Instagram', href: 'https://instagram.com', icon: 'instagram' },
     { name: 'LinkedIn', href: 'https://linkedin.com', icon: 'linkedin' },
   ]
@@ -197,40 +197,25 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map Section (Placeholder) */}
+      {/* Map Section */}
       <section className="h-96 bg-neutral-200 relative overflow-hidden">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="absolute inset-0 flex items-center justify-center"
+          className="absolute inset-0"
         >
-          <div className="text-center">
-            <svg
-              className="w-16 h-16 text-neutral-400 mx-auto mb-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-            <p className="text-neutral-600">Map Placeholder - Gulshan, Dhaka</p>
-          </div>
+          <iframe
+            title="Umbrella Interiors Location"
+            src="https://www.google.com/maps?q=Iqbal%20Road%2C%20Mohammadpur%2C%20Dhaka%2C%20Bangladesh&output=embed"
+            className="w-full h-full border-0"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </motion.div>
       </section>
     </div>
   )
 }
-

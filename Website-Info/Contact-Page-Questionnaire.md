@@ -52,14 +52,14 @@ This document contains questions about the content and functionality for your Co
    - Should email be clickable? (Currently: Yes, mailto link)
 
 3. **Phone Number**:
-   - What is your actual phone number? (Currently: "+880 1234-567890")
+   - What is your actual phone number? (Currently: "+880 1626 436389")
    - Should it be formatted in a specific way?
    - Should there be multiple phone numbers? (e.g., Main, Mobile, WhatsApp)
    - Should phone be clickable? (Currently: Yes, tel link)
    - Should it include country code? (Currently: Yes, +880)
 
 4. **Office Address**:
-   - What is your actual office address? (Currently: "Gulshan, Dhaka, Bangladesh")
+   - What is your actual office address? (Currently: "Iqbal Road, Mohammadpur, Bangladesh")
    - Should it be more detailed? (e.g., Street address, Building name, Floor, etc.)
    - Should address be clickable? (Currently: No)
    - Should it link to Google Maps or navigation?

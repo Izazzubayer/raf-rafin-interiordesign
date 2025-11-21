@@ -8,12 +8,21 @@ import { Send } from 'lucide-react'
 interface FormData {
   name: string
   email: string
+  phone: string
+  projectType: string
+  location: string
+  budget: string
+  timeline: string
+  style: string
   message: string
 }
 
 export default function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>()
+
+  const selectBase =
+    'select-arrow w-full px-4 py-3 border border-neutral-300 rounded-sm bg-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors duration-300 appearance-none pr-12 bg-no-repeat bg-[length:14px_14px]'
 
   const onSubmit = async (data: FormData) => {
     // Simulate form submission
@@ -80,12 +89,168 @@ export default function ContactForm() {
           )}
         </motion.div>
 
+        {/* Phone Field */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.25 }}
+        >
+          <label htmlFor="phone" className="block text-sm font-medium text-neutral-700 mb-2">
+            Phone Number *
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            {...register('phone', {
+              required: 'Phone is required',
+              minLength: { value: 8, message: 'Please enter a valid phone number' },
+            })}
+            className="w-full px-4 py-3 border border-neutral-300 rounded-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors duration-300"
+            placeholder="+8801XXXXXXXXX"
+          />
+          {errors.phone && (
+            <p className="mt-2 text-sm text-red-600">{errors.phone.message}</p>
+          )}
+        </motion.div>
+
+        {/* Project Details */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            <label htmlFor="projectType" className="block text-sm font-medium text-neutral-700 mb-2">
+              Project Type *
+            </label>
+            <select
+              id="projectType"
+              {...register('projectType', { required: 'Project type is required' })}
+              className={selectBase}
+              defaultValue=""
+            >
+              <option value="" disabled>Select an option</option>
+              <option value="residential">Residential</option>
+              <option value="commercial">Commercial</option>
+              <option value="hospitality">Hospitality</option>
+              <option value="office">Office</option>
+              <option value="retail">Retail</option>
+              <option value="other">Other</option>
+            </select>
+            {errors.projectType && (
+              <p className="mt-2 text-sm text-red-600">{errors.projectType.message}</p>
+            )}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.35 }}
+          >
+            <label htmlFor="location" className="block text-sm font-medium text-neutral-700 mb-2">
+              Project Location *
+            </label>
+            <input
+              type="text"
+              id="location"
+              {...register('location', { required: 'Location is required' })}
+              className="w-full px-4 py-3 border border-neutral-300 rounded-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors duration-300"
+              placeholder="Neighborhood / City"
+            />
+            {errors.location && (
+              <p className="mt-2 text-sm text-red-600">{errors.location.message}</p>
+            )}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+          >
+            <label htmlFor="budget" className="block text-sm font-medium text-neutral-700 mb-2">
+              Budget Range *
+            </label>
+            <select
+              id="budget"
+              {...register('budget', { required: 'Budget range is required' })}
+              className={selectBase}
+              defaultValue=""
+            >
+              <option value="" disabled>Select budget</option>
+              <option value="below-5l">Below ৳5 Lakh</option>
+              <option value="5l-10l">৳5-10 Lakh</option>
+              <option value="10l-20l">৳10-20 Lakh</option>
+              <option value="20l-plus">৳20 Lakh+</option>
+            </select>
+            {errors.budget && (
+              <p className="mt-2 text-sm text-red-600">{errors.budget.message}</p>
+            )}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.45 }}
+          >
+            <label htmlFor="timeline" className="block text-sm font-medium text-neutral-700 mb-2">
+              Desired Timeline *
+            </label>
+            <select
+              id="timeline"
+              {...register('timeline', { required: 'Timeline is required' })}
+              className={selectBase}
+              defaultValue=""
+            >
+              <option value="" disabled>Select timeline</option>
+              <option value="asap">ASAP</option>
+              <option value="1-3mo">1-3 months</option>
+              <option value="3-6mo">3-6 months</option>
+              <option value="6-12mo">6-12 months</option>
+              <option value="12plus">12+ months</option>
+            </select>
+            {errors.timeline && (
+              <p className="mt-2 text-sm text-red-600">{errors.timeline.message}</p>
+            )}
+          </motion.div>
+        </div>
+
+        {/* Style Preferences */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+        >
+          <label htmlFor="style" className="block text-sm font-medium text-neutral-700 mb-2">
+            Preferred Style (optional)
+          </label>
+          <select
+            id="style"
+            {...register('style')}
+            className={selectBase}
+            defaultValue=""
+          >
+            <option value="">Select style (optional)</option>
+            <option value="modern">Modern</option>
+            <option value="minimal">Minimal</option>
+            <option value="contemporary">Contemporary</option>
+            <option value="luxury">Luxury</option>
+            <option value="traditional">Traditional</option>
+            <option value="mixed">Mixed / Not sure</option>
+          </select>
+        </motion.div>
+
         {/* Message Field */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 0.55 }}
         >
           <label htmlFor="message" className="block text-sm font-medium text-neutral-700 mb-2">
             Your Message *
@@ -107,7 +272,7 @@ export default function ContactForm() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
+          transition={{ delay: 0.6 }}
         >
           <motion.button
             type="submit"
@@ -155,4 +320,3 @@ export default function ContactForm() {
     </div>
   )
 }
-

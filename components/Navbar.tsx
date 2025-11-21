@@ -24,12 +24,10 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       if (isHomePage) {
-        // On homepage, show background only after scrolling past hero section (100vh)
         const heroHeight = window.innerHeight
         setIsScrolled(window.scrollY > heroHeight - 100)
       } else {
-        // On other pages, show background after small scroll
-        setIsScrolled(window.scrollY > 20)
+        setIsScrolled(true)
       }
     }
 
@@ -46,14 +44,7 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className={cn(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
-          isScrolled 
-            ? 'backdrop-blur-nav shadow-sm py-4 bg-cream/95' 
-            : isHomePage 
-              ? 'bg-transparent py-6' 
-              : 'bg-cream/80 backdrop-blur-sm py-6'
-        )}
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 backdrop-blur-nav shadow-sm py-4 bg-cream/95"
       >
         <nav className="container-width section-padding">
           <div className="flex items-center justify-between">
@@ -65,14 +56,11 @@ export default function Navbar() {
                 className="flex items-center gap-3 transition-all duration-300"
               >
                 <Image
-                  src="/Frame%2016.png"
+                  src={isHomePage && !isScrolled ? '/Frame%2016.png' : '/Frame%2016.png'}
                   alt="Umbrella Interiors logo"
                   width={180}
                   height={72}
-                  className={cn(
-                    'h-10 w-auto md:h-12 transition-opacity duration-300',
-                    isScrolled || !isHomePage ? 'opacity-100' : 'opacity-95'
-                  )}
+                  className="h-10 w-auto md:h-12 transition-opacity duration-300"
                   priority
                 />
                 <span className="sr-only">Umbrella Interiors</span>
@@ -91,12 +79,8 @@ export default function Navbar() {
                   >
                     <span
                       className={cn(
-                        'text-sm uppercase tracking-wider font-medium transition-colors duration-300',
-                        isActive 
-                          ? 'text-gold' 
-                          : isScrolled || !isHomePage 
-                            ? 'text-slate-dark hover:text-gold' 
-                            : 'text-cream hover:text-gold'
+                        'text-sm uppercase tracking-wider font-medium transition-colors duration-300 advent-pro-text',
+                        isActive ? 'text-gold' : 'text-slate-dark hover:text-gold'
                       )}
                     >
                       {item.name}
@@ -122,24 +106,15 @@ export default function Navbar() {
               <div className="w-6 flex flex-col items-end space-y-1.5">
                 <motion.span
                   animate={isMobileMenuOpen ? { rotate: 45, y: 8, width: '100%' } : { rotate: 0, y: 0, width: '100%' }}
-                  className={cn(
-                    "block h-0.5 origin-center transition-all",
-                    isScrolled || !isHomePage ? "bg-slate" : "bg-cream"
-                  )}
+                  className="block h-0.5 bg-slate origin-center transition-all"
                 />
                 <motion.span
                   animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-                  className={cn(
-                    "block h-0.5 w-4/5",
-                    isScrolled || !isHomePage ? "bg-slate" : "bg-cream"
-                  )}
+                  className="block h-0.5 w-4/5 bg-slate"
                 />
                 <motion.span
                   animate={isMobileMenuOpen ? { rotate: -45, y: -8, width: '100%' } : { rotate: 0, y: 0, width: '100%' }}
-                  className={cn(
-                    "block h-0.5 origin-center transition-all",
-                    isScrolled || !isHomePage ? "bg-slate" : "bg-cream"
-                  )}
+                  className="block h-0.5 bg-slate origin-center transition-all"
                 />
               </div>
             </button>
@@ -180,7 +155,7 @@ export default function Navbar() {
                         href={item.href}
                         onClick={() => setIsMobileMenuOpen(false)}
                         className={cn(
-                          'block py-4 text-lg font-medium transition-colors duration-300 font-serif',
+                          'block py-4 text-lg font-medium transition-colors duration-300 font-serif advent-pro-text',
                           isActive ? 'text-gold' : 'text-slate-dark hover:text-gold'
                         )}
                       >
