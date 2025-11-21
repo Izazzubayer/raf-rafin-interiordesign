@@ -80,7 +80,7 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-8 font-serif">
               {navItems.map((item) => {
                 const isActive = pathname === item.href
                 return (
@@ -180,7 +180,7 @@ export default function Navbar() {
                         href={item.href}
                         onClick={() => setIsMobileMenuOpen(false)}
                         className={cn(
-                          'block py-4 text-lg font-medium transition-colors duration-300',
+                          'block py-4 text-lg font-medium transition-colors duration-300 font-serif',
                           isActive ? 'text-gold' : 'text-slate-dark hover:text-gold'
                         )}
                       >
