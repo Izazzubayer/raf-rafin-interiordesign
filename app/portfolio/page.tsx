@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import { Search } from 'lucide-react'
 import FilterSidebar from '@/components/FilterSidebar'
 import PortfolioCard from '@/components/PortfolioCard'
 import SortAndViewControls from '@/components/SortAndViewControls'
@@ -126,7 +127,7 @@ export default function PortfolioPage() {
         />
 
         {/* Header */}
-        <div ref={headerRef} className="mb-12">
+        <div ref={headerRef} className="mb-16 md:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

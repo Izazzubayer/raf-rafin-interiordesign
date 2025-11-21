@@ -65,22 +65,17 @@ export default function Navbar() {
                 className="flex items-center gap-3 transition-all duration-300"
               >
                 <Image
-                  src="/umbrellainterior.png"
-                  alt="Umbrella Interiors"
-                  width={40}
-                  height={40}
+                  src="/Frame%2016.png"
+                  alt="Umbrella Interiors logo"
+                  width={180}
+                  height={72}
                   className={cn(
-                    "h-8 md:h-10 w-auto transition-opacity duration-300",
-                    isScrolled || !isHomePage ? "opacity-100" : "opacity-90"
+                    'h-10 w-auto md:h-12 transition-opacity duration-300',
+                    isScrolled || !isHomePage ? 'opacity-100' : 'opacity-95'
                   )}
                   priority
                 />
-                <span className={cn(
-                  "text-2xl md:text-3xl font-serif font-light tracking-tight group-hover:text-gold transition-colors duration-300",
-                  isScrolled || !isHomePage ? "text-slate-dark" : "text-cream"
-                )}>
-                  Umbrella <span className="font-medium">Interiors</span>
-                </span>
+                <span className="sr-only">Umbrella Interiors</span>
               </motion.div>
             </Link>
 
@@ -202,4 +197,3 @@ export default function Navbar() {
     </>
   )
 }
-

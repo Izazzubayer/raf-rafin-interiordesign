@@ -39,15 +39,13 @@ export default function Footer() {
             >
               <Link href="/" className="inline-flex items-center gap-3 mb-4 group">
                 <Image
-                  src="/umbrellainterior.png"
-                  alt="Umbrella Interiors"
-                  width={50}
-                  height={50}
-                  className="h-10 md:h-12 w-auto"
+                  src="/Frame%2017.png"
+                  alt="Umbrella Interiors logo"
+                  width={200}
+                  height={80}
+                  className="h-12 w-auto"
                 />
-                <span className="text-3xl font-serif font-light tracking-tight text-cream">
-                  Umbrella <span className="font-medium">Interiors</span>
-                </span>
+                <span className="sr-only">Umbrella Interiors</span>
               </Link>
               <p className="text-neutral-300 max-w-sm leading-relaxed mb-6">
                 Designing timeless interiors for modern living. Designing Spaces That Shelter Your Vision.
@@ -113,4 +111,3 @@ export default function Footer() {
     </footer>
   )
 }
-

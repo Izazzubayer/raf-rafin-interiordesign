@@ -24,6 +24,11 @@ export const metadata: Metadata = {
   description: 'Premium interior design studio in Dhaka, specializing in residential spaces that blend elegance with functionality.',
   keywords: ['interior design', 'Dhaka', 'Bangladesh', 'residential design', 'modern interiors', 'luxury homes'],
   authors: [{ name: 'Umbrella Interiors' }],
+  icons: {
+    icon: '/6.png',
+    shortcut: '/6.png',
+    apple: '/6.png',
+  },
   openGraph: {
     title: 'Umbrella Interiors — Designing Timeless Interiors',
     description: 'Transform your space with award-winning interior design.',
@@ -52,4 +57,3 @@ export default function RootLayout({
     </html>
   )
 }
-
