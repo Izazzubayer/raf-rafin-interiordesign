@@ -6,6 +6,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { FileText, Scale, AlertCircle, CreditCard, Shield, Users, Gavel, Mail } from 'lucide-react'
 import Link from 'next/link'
+import ContactForm from '@/components/ContactForm'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
@@ -39,7 +40,7 @@ export default function TermsOfServicePage() {
     return () => ctx.revert()
   }, [])
 
-  const lastUpdated = 'January 1, 2024'
+  const lastUpdated = 'January 1, 2026'
 
   const sections = [
     {
@@ -516,42 +517,17 @@ export default function TermsOfServicePage() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <div className="bg-beige rounded-sm p-8 md:p-12">
-              <div className="flex justify-center mb-6">
-                <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center text-gold">
-                  <Mail className="w-8 h-8" />
+            <div className="bg-beige rounded-sm p-8 md:p-12 text-left">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center text-gold">
+                  <Mail className="w-7 h-7" />
                 </div>
+                <h2 className="heading-3 text-slate mb-0">Need clarification? Contact us.</h2>
               </div>
-              <h2 className="heading-3 text-slate mb-4">Questions About These Terms?</h2>
-              <p className="body-text text-neutral-700 mb-6">
-                If you have any questions, concerns, or need clarification regarding these Terms of Service, please contact us:
+              <p className="body-text text-neutral-700 mb-8">
+                Fill out the form and we&apos;ll respond with the details you need about these terms.
               </p>
-              <div className="space-y-3">
-                <p className="text-slate font-medium">
-                  <strong>Email:</strong>{' '}
-                  <a
-                    href="mailto:legal@umbrellainteriors.com"
-                    className="text-gold hover:underline"
-                  >
-                    legal@umbrellainteriors.com
-                  </a>
-                </p>
-                <p className="text-slate font-medium">
-                  <strong>General Contact:</strong>{' '}
-                  <a
-                    href="mailto:hello@umbrellainteriors.com"
-                    className="text-gold hover:underline"
-                  >
-                    hello@umbrellainteriors.com
-                  </a>
-                </p>
-                <p className="text-slate font-medium">
-                  <strong>Phone:</strong> +880 1626 436389
-                </p>
-                <p className="text-slate font-medium">
-                  <strong>Address:</strong> Iqbal Road, Mohammadpur, Bangladesh
-                </p>
-              </div>
+              <ContactForm />
             </div>
           </motion.div>
         </div>
@@ -578,4 +554,3 @@ export default function TermsOfServicePage() {
     </div>
   )
 }
-

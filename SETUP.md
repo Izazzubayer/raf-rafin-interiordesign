@@ -90,7 +90,7 @@ Edit `/lib/data.ts` to add/modify projects:
   slug: "your-project-slug",
   gallery: [...],
   description: "...",
-  year: 2024,
+  year: 2026,
   area: "1,200 sq ft",
   client: "Client Name"
 }

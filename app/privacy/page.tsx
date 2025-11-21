@@ -6,6 +6,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { Shield, Lock, Eye, FileText, Mail } from 'lucide-react'
 import Link from 'next/link'
+import ContactForm from '@/components/ContactForm'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
@@ -39,7 +40,7 @@ export default function PrivacyPolicyPage() {
     return () => ctx.revert()
   }, [])
 
-  const lastUpdated = 'January 1, 2024'
+  const lastUpdated = 'January 1, 2026'
 
   const sections = [
     {
@@ -402,42 +403,17 @@ export default function PrivacyPolicyPage() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <div className="bg-beige rounded-sm p-8 md:p-12">
-              <div className="flex justify-center mb-6">
-                <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center text-gold">
-                  <Mail className="w-8 h-8" />
+            <div className="bg-beige rounded-sm p-8 md:p-12 text-left">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center text-gold">
+                  <Mail className="w-7 h-7" />
                 </div>
+                <h2 className="heading-3 text-slate mb-0">Have questions? Reach out.</h2>
               </div>
-              <h2 className="heading-3 text-slate mb-4">Questions About This Policy?</h2>
-              <p className="body-text text-neutral-700 mb-6">
-                If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:
+              <p className="body-text text-neutral-700 mb-8">
+                Share your details and our team will follow up promptly about privacy requests.
               </p>
-              <div className="space-y-3">
-                <p className="text-slate font-medium">
-                  <strong>Email:</strong>{' '}
-                  <a
-                    href="mailto:privacy@umbrellainteriors.com"
-                    className="text-gold hover:underline"
-                  >
-                    privacy@umbrellainteriors.com
-                  </a>
-                </p>
-                <p className="text-slate font-medium">
-                  <strong>General Contact:</strong>{' '}
-                  <a
-                    href="mailto:hello@umbrellainteriors.com"
-                    className="text-gold hover:underline"
-                  >
-                    hello@umbrellainteriors.com
-                  </a>
-                </p>
-                <p className="text-slate font-medium">
-                  <strong>Phone:</strong> +880 1626 436389
-                </p>
-                <p className="text-slate font-medium">
-                  <strong>Address:</strong> Iqbal Road, Mohammadpur, Bangladesh
-                </p>
-              </div>
+              <ContactForm />
             </div>
           </motion.div>
         </div>
@@ -464,4 +440,3 @@ export default function PrivacyPolicyPage() {
     </div>
   )
 }
-

@@ -135,7 +135,7 @@ This document gathers foundational information about your brand, company identit
    - Do you have these documents? If not, should we create placeholders?
 
 6. **Footer Copyright**:
-   - Should footer show copyright notice? (Currently: Yes, "© 2024 Umbrella Interiors")
+   - Should footer show copyright notice? (Currently: Yes, "© 2026 Umbrella Interiors")
    - Is the company name correct?
 
 ---
