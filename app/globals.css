@@ -69,19 +69,38 @@
   }
 
   .heading-hero {
-    @apply text-hero font-serif font-light tracking-tight;
+    @apply text-hero font-light tracking-tight;
+    font-family: "Advent Pro", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "wdth" 100;
   }
 
   .heading-1 {
-    @apply text-h1 font-serif font-light tracking-tight;
+    @apply text-h1 font-light tracking-tight;
+    font-family: "Advent Pro", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "wdth" 100;
   }
 
   .heading-2 {
-    @apply text-h2 font-serif font-light;
+    @apply text-h2 font-light;
+    font-family: "Advent Pro", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "wdth" 100;
   }
 
   .heading-3 {
     @apply text-h3 font-sans font-medium;
+    font-family: "Advent Pro", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "wdth" 100;
+  }
+
+  .advent-pro-heading {
+    font-family: "Advent Pro", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
   }
 
   .body-text {
@@ -189,4 +208,3 @@
 ::selection {
   @apply bg-gold/30 text-neutral-900;
 }
-
