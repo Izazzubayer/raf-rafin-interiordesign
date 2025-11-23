@@ -77,7 +77,7 @@ export default function PortfolioCard({ project, index, viewMode = 'grid' }: Por
             </span>
           </div>
 
-          <h3 className="text-xl font-serif text-slate-dark group-hover:text-gold transition-colors duration-300">
+          <h3 className="text-xl text-slate-dark group-hover:text-gold transition-colors duration-300 advent-pro-heading">
             {project.title}
           </h3>
 

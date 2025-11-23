@@ -188,7 +188,7 @@ export default function ServicesPage() {
               >
                 <div className="bg-white rounded-sm p-8 hover:shadow-lg transition-all duration-500 h-full">
                   <div className="text-gold mb-4">{service.icon}</div>
-                  <h3 className="text-xl font-serif text-slate mb-3">{service.title}</h3>
+                  <h3 className="text-xl text-slate mb-3 advent-pro-heading">{service.title}</h3>
                   <p className="text-sm text-neutral-600 leading-relaxed mb-6">{service.description}</p>
                   
                   <div className="space-y-2">
