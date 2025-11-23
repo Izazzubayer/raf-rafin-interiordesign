@@ -88,7 +88,7 @@ export default function ProjectGrid({ projects, featured = false }: ProjectGridP
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-serif text-slate-dark group-hover:text-gold transition-colors duration-300 pt-1">
+              <h3 className="text-xl text-slate-dark group-hover:text-gold transition-colors duration-300 pt-1 advent-pro-heading">
                 {project.title}
               </h3>
 

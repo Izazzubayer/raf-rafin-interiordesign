@@ -122,7 +122,7 @@ export default function HomePage() {
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 className="text-center"
               >
-                <div className="text-4xl md:text-5xl font-serif text-gold mb-2">
+                <div className="text-4xl md:text-5xl text-gold mb-2 advent-pro-heading font-light">
                   <span className="stat-number" data-target={stat.number}>
                     0
                   </span>
@@ -162,7 +162,7 @@ export default function HomePage() {
                 className="service-card bg-white rounded-sm p-8 hover:shadow-xl transition-shadow duration-500"
               >
                 <div className="text-gold mb-4">{service.icon}</div>
-                <h3 className="text-xl font-serif text-slate-dark mb-3">{service.title}</h3>
+                <h3 className="text-xl text-slate-dark mb-3 advent-pro-heading">{service.title}</h3>
                 <p className="text-sm text-neutral-700 leading-relaxed">{service.description}</p>
               </motion.div>
             ))}
@@ -240,7 +240,7 @@ export default function HomePage() {
                   </div>
                   
                   {/* Title */}
-                  <h3 className="text-xl font-serif text-slate-dark mb-3">{service.title}</h3>
+                  <h3 className="text-xl text-slate-dark mb-3 advent-pro-heading">{service.title}</h3>
                   
                   {/* Description */}
                   <p className="text-sm text-neutral-700 leading-relaxed mb-6 flex-grow">{service.description}</p>
@@ -406,12 +406,12 @@ export default function HomePage() {
                   <div className="bg-white rounded-sm p-8 hover:shadow-lg transition-all duration-500 h-full">
                     {/* Step Number & Icon */}
                     <div className="flex items-center justify-between mb-6">
-                      <div className="text-4xl font-serif text-gold/30">{step.number}</div>
+                      <div className="text-4xl text-gold/30 advent-pro-heading font-light">{step.number}</div>
                       <div className="text-gold">{step.icon}</div>
                   </div>
 
                     {/* Title */}
-                    <h3 className="text-xl font-serif text-slate-dark mb-4">{step.title}</h3>
+                    <h3 className="text-xl text-slate-dark mb-4 advent-pro-heading">{step.title}</h3>
 
                     {/* Description */}
                     <p className="text-sm text-neutral-700 leading-relaxed mb-6">{step.description}</p>
@@ -543,4 +543,3 @@ export default function HomePage() {
     </>
   )
 }
-
