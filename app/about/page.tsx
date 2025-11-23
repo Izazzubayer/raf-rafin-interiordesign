@@ -36,19 +36,6 @@ export default function AboutPage() {
         stagger: 0.15,
         ease: 'power3.out',
       })
-
-      // Values cards stagger
-      gsap.from('.value-card', {
-        scrollTrigger: {
-          trigger: '.values-grid',
-          start: 'top 80%',
-        },
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power3.out',
-      })
     })
 
     return () => ctx.revert()
@@ -116,6 +103,15 @@ export default function AboutPage() {
     },
   ]
 
+  const valueVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, ease: 'easeOut' },
+    },
+  }
+
   return (
     <div className="min-h-screen bg-cream">
       {/* Hero Section */}
@@ -132,7 +128,7 @@ export default function AboutPage() {
                 About Us
               </span>
             </motion.div>
-            <h1 className="heading-1 text-slate mb-6">Crafting Spaces, Creating Experiences</h1>
+            <h1 className="heading-1 text-slate mb-6">Designing Spaces That Shelter Your Vision</h1>
             <p className="body-text text-lg text-neutral-700 leading-relaxed">
               For over a decade, Umbrella Interiors has been transforming residential spaces across Dhaka into stunning environments that reflect our clients&apos; unique personalities and lifestyles.
             </p>
@@ -204,14 +200,19 @@ export default function AboutPage() {
 
           <div className="values-grid grid grid-cols-1 md:grid-cols-2 gap-8">
             {values.map((value, index) => (
-              <div
+              <motion.div
                 key={value.title}
+                variants={valueVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ delay: index * 0.1 }}
                 className="value-card bg-beige rounded-sm p-8 hover:shadow-lg transition-all duration-500"
               >
                 <div className="text-gold mb-4">{value.icon}</div>
                 <h3 className="text-xl font-serif text-slate mb-3">{value.title}</h3>
                 <p className="text-sm text-neutral-600 leading-relaxed">{value.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -227,7 +228,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h2 className="heading-2 text-slate mb-6">Meet Our Team</h2>
+            <h2 className="heading-2 text-slate mb-6">Meet Our Founders</h2>
             <p className="body-text text-lg">
               A talented group of designers, architects, and creative professionals dedicated to bringing your vision to life.
             </p>
@@ -317,4 +318,3 @@ export default function AboutPage() {
     </div>
   )
 }
-

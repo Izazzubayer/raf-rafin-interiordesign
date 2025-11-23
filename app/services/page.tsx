@@ -192,7 +192,7 @@ export default function ServicesPage() {
                   <p className="text-sm text-neutral-600 leading-relaxed mb-6">{service.description}</p>
                   
                   <div className="space-y-2">
-                    <h4 className="text-sm font-medium text-slate-dark uppercase tracking-wider mb-3">What's Included:</h4>
+                    <h4 className="text-sm font-medium text-slate-dark uppercase tracking-wider mb-3">What&apos;s Included:</h4>
                     <ul className="space-y-2">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start text-sm text-neutral-600">

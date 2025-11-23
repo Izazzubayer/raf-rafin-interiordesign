@@ -73,11 +73,8 @@ export default function PrivacyPolicyPage() {
               We may collect personal information that you voluntarily provide to us when you:
             </p>
             <ul className="list-disc list-inside space-y-2 body-text text-neutral-700 ml-4">
-              <li>Register for an account or create a profile</li>
               <li>Request information about our services</li>
               <li>Fill out contact forms or request consultations</li>
-              <li>Subscribe to our newsletter or marketing communications</li>
-              <li>Participate in surveys, contests, or promotions</li>
               <li>Contact us via email, phone, or other communication methods</li>
             </ul>
             <p className="body-text text-neutral-700 mt-4">
@@ -97,13 +94,10 @@ export default function PrivacyPolicyPage() {
               When you visit our website, we automatically collect certain information about your device and browsing behavior, including:
             </p>
             <ul className="list-disc list-inside space-y-2 body-text text-neutral-700 ml-4">
-              <li>IP address and location data</li>
-              <li>Browser type and version</li>
-              <li>Operating system</li>
-              <li>Pages visited and time spent on pages</li>
+              <li>Pages visited</li>
               <li>Referring website addresses</li>
               <li>Device information (type, model, screen resolution)</li>
-              <li>Cookies and similar tracking technologies</li>
+              <li>Region</li>
             </ul>
           </div>
           <div>
@@ -126,13 +120,9 @@ export default function PrivacyPolicyPage() {
           </p>
           <ul className="list-disc list-inside space-y-2 ml-4">
             <li><strong>Service Delivery:</strong> To provide, maintain, and improve our interior design services, respond to your inquiries, and fulfill your requests</li>
-            <li><strong>Communication:</strong> To send you updates, newsletters, marketing materials, and respond to your questions or concerns</li>
+            <li><strong>Communication:</strong> Respond to your questions or concerns</li>
             <li><strong>Project Management:</strong> To manage your projects, schedule consultations, and coordinate design services</li>
-            <li><strong>Business Operations:</strong> To process transactions, manage accounts, and conduct business analytics</li>
             <li><strong>Legal Compliance:</strong> To comply with legal obligations, enforce our terms of service, and protect our rights and interests</li>
-            <li><strong>Personalization:</strong> To customize your experience, show relevant content, and provide tailored recommendations</li>
-            <li><strong>Security:</strong> To detect, prevent, and address technical issues, fraud, and security threats</li>
-            <li><strong>Marketing:</strong> To send promotional materials, special offers, and information about new services (with your consent where required)</li>
           </ul>
         </div>
       ),
@@ -173,105 +163,104 @@ export default function PrivacyPolicyPage() {
         </div>
       ),
     },
-    {
-      id: 'data-security',
-      title: 'Data Security',
-      icon: <Lock className="w-6 h-6" />,
-      content: (
-        <div className="space-y-4 body-text text-neutral-700">
-          <p>
-            We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:
-          </p>
-          <ul className="list-disc list-inside space-y-2 ml-4">
-            <li>Encryption of sensitive data in transit and at rest</li>
-            <li>Secure servers and databases</li>
-            <li>Regular security assessments and updates</li>
-            <li>Access controls and authentication procedures</li>
-            <li>Employee training on data protection</li>
-            <li>Incident response and breach notification procedures</li>
-          </ul>
-          <p>
-            However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your information, we cannot guarantee absolute security.
-          </p>
-        </div>
-      ),
-    },
-    {
-      id: 'your-rights',
-      title: 'Your Rights and Choices',
-      icon: <Shield className="w-6 h-6" />,
-      content: (
-        <div className="space-y-4 body-text text-neutral-700">
-          <p>
-            Depending on your location, you may have certain rights regarding your personal information, including:
-          </p>
-          <ul className="list-disc list-inside space-y-2 ml-4">
-            <li><strong>Access:</strong> Request access to the personal information we hold about you</li>
-            <li><strong>Correction:</strong> Request correction of inaccurate or incomplete information</li>
-            <li><strong>Deletion:</strong> Request deletion of your personal information, subject to legal and contractual obligations</li>
-            <li><strong>Objection:</strong> Object to processing of your information for certain purposes</li>
-            <li><strong>Restriction:</strong> Request restriction of processing in certain circumstances</li>
-            <li><strong>Portability:</strong> Request transfer of your information to another service provider</li>
-            <li><strong>Withdraw Consent:</strong> Withdraw consent where processing is based on consent</li>
-            <li><strong>Opt-Out:</strong> Opt out of marketing communications at any time</li>
-          </ul>
-          <p className="mt-4">
-            To exercise these rights, please contact us using the information provided in the &quot;Contact Us&quot; section below. We will respond to your request within a reasonable timeframe and in accordance with applicable laws.
-          </p>
-        </div>
-      ),
-    },
-    {
-      id: 'data-retention',
-      title: 'Data Retention',
-      icon: <FileText className="w-6 h-6" />,
-      content: (
-        <div className="space-y-4 body-text text-neutral-700">
-          <p>
-            We retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. Factors we consider when determining retention periods include:
-          </p>
-          <ul className="list-disc list-inside space-y-2 ml-4">
-            <li>The nature and sensitivity of the information</li>
-            <li>The purposes for which we collected it</li>
-            <li>Legal, contractual, or regulatory requirements</li>
-            <li>The potential risk of harm from unauthorized use or disclosure</li>
-            <li>Whether we can achieve the purposes through other means</li>
-          </ul>
-          <p>
-            When we no longer need your information, we will securely delete or anonymize it in accordance with our data retention policies.
-          </p>
-        </div>
-      ),
-    },
-    {
-      id: 'children-privacy',
-      title: 'Children&apos;s Privacy',
-      icon: <Shield className="w-6 h-6" />,
-      content: (
-        <div className="space-y-4 body-text text-neutral-700">
-          <p>
-            Our Services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately. If we become aware that we have collected information from a child without parental consent, we will take steps to delete that information.
-          </p>
-        </div>
-      ),
-    },
-    {
-      id: 'international-transfers',
-      title: 'International Data Transfers',
-      icon: <Lock className="w-6 h-6" />,
-      content: (
-        <div className="space-y-4 body-text text-neutral-700">
-          <p>
-            Your information may be transferred to and processed in countries other than your country of residence. These countries may have data protection laws that differ from those in your country. When we transfer information across borders, we take appropriate safeguards to ensure your information receives adequate protection, including:
-          </p>
-          <ul className="list-disc list-inside space-y-2 ml-4">
-            <li>Using standard contractual clauses approved by relevant data protection authorities</li>
-            <li>Ensuring recipients are bound by appropriate data protection obligations</li>
-            <li>Conducting due diligence on third-party service providers</li>
-          </ul>
-        </div>
-      ),
-    },
+    // {
+    //   id: 'data-security',
+    //   title: 'Data Security',
+    //   icon: <Lock className="w-6 h-6" />,
+    //   content: (
+    //     <div className="space-y-4 body-text text-neutral-700">
+    //       <p>
+    //         We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:
+    //       </p>
+    //       <ul className="list-disc list-inside space-y-2 ml-4">
+    //         <li>Encryption of sensitive data in transit and at rest</li>
+    //         <li>Secure servers and databases</li>
+    //         <li>Regular security assessments and updates</li>
+    //         <li>Access controls and authentication procedures</li>
+    //         <li>Employee training on data protection</li>
+    //         <li>Incident response and breach notification procedures</li>
+    //       </ul>
+    //       <p>
+    //         However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your information, we cannot guarantee absolute security.
+    //       </p>
+    //     </div>
+    //   ),
+    // },
+    // {
+    //   id: 'your-rights',
+    //   title: 'Your Rights and Choices',
+    //   icon: <Shield className="w-6 h-6" />,
+    //   content: (
+    //     <div className="space-y-4 body-text text-neutral-700">
+    //       <p>
+    //         Depending on your location, you may have certain rights regarding your personal information, including:
+    //       </p>
+    //       <ul className="list-disc list-inside space-y-2 ml-4">
+    //         <li><strong>Access:</strong> Request access to the personal information we hold about you</li>
+    //         <li><strong>Correction:</strong> Request correction of inaccurate or incomplete information</li>
+    //         <li><strong>Deletion:</strong> Request deletion of your personal information, subject to legal and contractual obligations</li>
+    //         <li><strong>Objection:</strong> Object to processing of your information for certain purposes</li>
+    //         <li><strong>Restriction:</strong> Request restriction of processing in certain circumstances</li>
+    //         <li><strong>Portability:</strong> Request transfer of your information to another service provider</li>
+    //         <li><strong>Withdraw Consent:</strong> Withdraw consent where processing is based on consent</li>
+    //       </ul>
+    //       <p className="mt-4">
+    //         To exercise these rights, please contact us using the information provided in the &quot;Contact Us&quot; section below. We will respond to your request within a reasonable timeframe and in accordance with applicable laws.
+    //       </p>
+    //     </div>
+    //   ),
+    // },
+    // {
+    //   id: 'data-retention',
+    //   title: 'Data Retention',
+    //   icon: <FileText className="w-6 h-6" />,
+    //   content: (
+    //     <div className="space-y-4 body-text text-neutral-700">
+    //       <p>
+    //         We retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. Factors we consider when determining retention periods include:
+    //       </p>
+    //       <ul className="list-disc list-inside space-y-2 ml-4">
+    //         <li>The nature and sensitivity of the information</li>
+    //         <li>The purposes for which we collected it</li>
+    //         <li>Legal, contractual, or regulatory requirements</li>
+    //         <li>The potential risk of harm from unauthorized use or disclosure</li>
+    //         <li>Whether we can achieve the purposes through other means</li>
+    //       </ul>
+    //       <p>
+    //         When we no longer need your information, we will securely delete or anonymize it in accordance with our data retention policies.
+    //       </p>
+    //     </div>
+    //   ),
+    // },
+    // {
+    //   id: 'children-privacy',
+    //   title: 'Children&apos;s Privacy',
+    //   icon: <Shield className="w-6 h-6" />,
+    //   content: (
+    //     <div className="space-y-4 body-text text-neutral-700">
+    //       <p>
+    //         Our Services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately. If we become aware that we have collected information from a child without parental consent, we will take steps to delete that information.
+    //       </p>
+    //     </div>
+    //   ),
+    // },
+    // {
+    //   id: 'international-transfers',
+    //   title: 'International Data Transfers',
+    //   icon: <Lock className="w-6 h-6" />,
+    //   content: (
+    //     <div className="space-y-4 body-text text-neutral-700">
+    //       <p>
+    //         Your information may be transferred to and processed in countries other than your country of residence. These countries may have data protection laws that differ from those in your country. When we transfer information across borders, we take appropriate safeguards to ensure your information receives adequate protection, including:
+    //       </p>
+    //       <ul className="list-disc list-inside space-y-2 ml-4">
+    //         <li>Using standard contractual clauses approved by relevant data protection authorities</li>
+    //         <li>Ensuring recipients are bound by appropriate data protection obligations</li>
+    //         <li>Conducting due diligence on third-party service providers</li>
+    //       </ul>
+    //     </div>
+    //   ),
+    // },
     {
       id: 'third-party-links',
       title: 'Third-Party Links and Services',

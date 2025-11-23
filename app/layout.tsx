@@ -1,10 +1,23 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { Advent_Pro, Anek_Latin } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ScrollProgress from '@/components/ScrollProgress'
 import FloatingChat from '@/components/FloatingChat'
+
+const adventPro = Advent_Pro({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-advent-pro',
+})
+
+const anekLatin = Anek_Latin({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-anek-latin',
+})
 
 export const metadata: Metadata = {
   title: 'Umbrella Interiors — Designing Timeless Interiors for Modern Living',
@@ -29,20 +42,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100..800&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body>
+    <html lang="en" className={`${adventPro.variable} ${anekLatin.variable}`}>
+      <body className={anekLatin.className}>
         <Script
           src="https://assets.calendly.com/assets/external/widget.js"
           strategy="lazyOnload"

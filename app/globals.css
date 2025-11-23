@@ -27,7 +27,7 @@
   body {
     @apply bg-cream text-neutral-900 antialiased;
     font-feature-settings: "kern" 1, "liga" 1;
-    font-family: "Anek Latin", sans-serif;
+    font-family: var(--font-anek-latin), sans-serif;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -71,48 +71,48 @@
 
   .heading-hero {
     @apply text-hero font-light tracking-tight;
-    font-family: "Advent Pro", sans-serif;
+    font-family: var(--font-advent-pro), sans-serif;
     font-optical-sizing: auto;
     font-variation-settings: "wdth" 100;
   }
 
   .heading-1 {
     @apply text-h1 font-light tracking-tight;
-    font-family: "Advent Pro", sans-serif;
+    font-family: var(--font-advent-pro), sans-serif;
     font-optical-sizing: auto;
     font-variation-settings: "wdth" 100;
   }
 
   .heading-2 {
     @apply text-h2 font-light;
-    font-family: "Advent Pro", sans-serif;
+    font-family: var(--font-advent-pro), sans-serif;
     font-optical-sizing: auto;
     font-variation-settings: "wdth" 100;
   }
 
   .heading-3 {
     @apply text-h3 font-sans font-medium;
-    font-family: "Advent Pro", sans-serif;
+    font-family: var(--font-advent-pro), sans-serif;
     font-optical-sizing: auto;
     font-variation-settings: "wdth" 100;
   }
 
   .advent-pro-heading {
-    font-family: "Advent Pro", sans-serif;
+    font-family: var(--font-advent-pro), sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     font-variation-settings: "wdth" 100;
   }
 
   .advent-pro-text {
-    font-family: "Advent Pro", sans-serif;
+    font-family: var(--font-advent-pro), sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     font-variation-settings: "wdth" 100;
   }
 
   .anek-latin-default {
-    font-family: "Anek Latin", sans-serif;
+    font-family: var(--font-anek-latin), sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     font-variation-settings: "wdth" 100;
