@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     siteName: 'Umbrella Interiors',
     images: [
       {
-        url: 'https://umbrellainteriors.com/logo.png',
+        url: 'https://umbrellainteriors.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Umbrella Interiors',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Umbrella Interiors — Designing Timeless Interiors',
     description: 'Transform your space with award-winning interior design.',
-    images: ['https://umbrellainteriors.com/logo.png'],
+    images: ['https://umbrellainteriors.com/og-image.png'],
   },
 }
 

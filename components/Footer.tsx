@@ -39,7 +39,7 @@ export default function Footer() {
             >
               <Link href="/" className="inline-flex items-center gap-3 mb-4 group">
                 <Image
-                  src="/logo.png"
+                  src="/logo-footer.png"
                   alt="Umbrella Interiors logo"
                   width={200}
                   height={80}
