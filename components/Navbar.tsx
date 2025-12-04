@@ -56,19 +56,21 @@ export default function Navbar() {
                 className="flex items-center gap-3 transition-all duration-300"
               >
                 <Image
-                  src={isHomePage && !isScrolled ? '/Frame%2016.png' : '/Frame%2016.png'}
+                  src="/logo.png"
                   alt="Umbrella Interiors logo"
                   width={180}
                   height={72}
                   className="h-10 w-auto md:h-12 transition-opacity duration-300"
                   priority
                 />
-                <span className="sr-only">Umbrella Interiors</span>
+                <span className="text-2xl font-medium text-slate-dark playfair-heading hidden sm:block">
+                  Umbrella Interiors
+                </span>
               </motion.div>
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8 font-serif">
+            <div className="hidden md:flex items-center space-x-8">
               {navItems.map((item) => {
                 const isActive = pathname === item.href
                 return (
@@ -79,7 +81,7 @@ export default function Navbar() {
                   >
                     <span
                       className={cn(
-                        'text-sm uppercase tracking-wider font-medium transition-colors duration-300 advent-pro-text',
+                        'text-sm uppercase tracking-wider font-medium transition-colors duration-300 anek-latin-default',
                         isActive ? 'text-gold' : 'text-slate-dark hover:text-gold'
                       )}
                     >
@@ -155,7 +157,7 @@ export default function Navbar() {
                         href={item.href}
                         onClick={() => setIsMobileMenuOpen(false)}
                         className={cn(
-                          'block py-4 text-lg font-medium transition-colors duration-300 font-serif advent-pro-text',
+                          'block py-4 text-lg font-medium transition-colors duration-300 anek-latin-default',
                           isActive ? 'text-gold' : 'text-slate-dark hover:text-gold'
                         )}
                       >

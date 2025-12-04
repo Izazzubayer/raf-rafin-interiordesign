@@ -1,16 +1,16 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
-import { Advent_Pro, Anek_Latin } from 'next/font/google'
+import { Playfair_Display, Anek_Latin } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ScrollProgress from '@/components/ScrollProgress'
 import FloatingChat from '@/components/FloatingChat'
 
-const adventPro = Advent_Pro({
+const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-advent-pro',
+  variable: '--font-playfair-display',
 })
 
 const anekLatin = Anek_Latin({
@@ -25,14 +25,30 @@ export const metadata: Metadata = {
   keywords: ['interior design', 'Dhaka', 'Bangladesh', 'residential design', 'modern interiors', 'luxury homes'],
   authors: [{ name: 'Umbrella Interiors' }],
   icons: {
-    icon: '/6.png',
-    shortcut: '/6.png',
-    apple: '/6.png',
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
   },
   openGraph: {
     title: 'Umbrella Interiors — Designing Timeless Interiors',
     description: 'Transform your space with award-winning interior design.',
     type: 'website',
+    url: 'https://umbrellainteriors.com',
+    siteName: 'Umbrella Interiors',
+    images: [
+      {
+        url: 'https://umbrellainteriors.com/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Umbrella Interiors',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Umbrella Interiors — Designing Timeless Interiors',
+    description: 'Transform your space with award-winning interior design.',
+    images: ['https://umbrellainteriors.com/logo.png'],
   },
 }
 
@@ -42,7 +58,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${adventPro.variable} ${anekLatin.variable}`}>
+    <html lang="en" className={`${playfairDisplay.variable} ${anekLatin.variable}`}>
       <body className={anekLatin.className}>
         <Script
           src="https://assets.calendly.com/assets/external/widget.js"

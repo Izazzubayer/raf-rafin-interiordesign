@@ -32,6 +32,7 @@
   
   h1, h2, h3, h4, h5, h6 {
     @apply text-slate-dark;
+    font-family: var(--font-playfair-display), serif;
   }
 
   html {
@@ -71,44 +72,32 @@
 
   .heading-hero {
     @apply text-hero font-light tracking-tight;
-    font-family: var(--font-advent-pro), sans-serif;
-    font-optical-sizing: auto;
-    font-variation-settings: "wdth" 100;
+    font-family: var(--font-playfair-display), serif;
   }
 
   .heading-1 {
     @apply text-h1 font-light tracking-tight;
-    font-family: var(--font-advent-pro), sans-serif;
-    font-optical-sizing: auto;
-    font-variation-settings: "wdth" 100;
+    font-family: var(--font-playfair-display), serif;
   }
 
   .heading-2 {
     @apply text-h2 font-light;
-    font-family: var(--font-advent-pro), sans-serif;
-    font-optical-sizing: auto;
-    font-variation-settings: "wdth" 100;
+    font-family: var(--font-playfair-display), serif;
   }
 
   .heading-3 {
-    @apply text-h3 font-sans font-medium;
-    font-family: var(--font-advent-pro), sans-serif;
-    font-optical-sizing: auto;
-    font-variation-settings: "wdth" 100;
+    @apply text-h3 font-medium;
+    font-family: var(--font-playfair-display), serif;
   }
 
-  .advent-pro-heading {
-    font-family: var(--font-advent-pro), sans-serif;
-    font-optical-sizing: auto;
+  .playfair-heading {
+    font-family: var(--font-playfair-display), serif;
     font-style: normal;
-    font-variation-settings: "wdth" 100;
   }
 
-  .advent-pro-text {
-    font-family: var(--font-advent-pro), sans-serif;
-    font-optical-sizing: auto;
+  .playfair-text {
+    font-family: var(--font-playfair-display), serif;
     font-style: normal;
-    font-variation-settings: "wdth" 100;
   }
 
   .anek-latin-default {

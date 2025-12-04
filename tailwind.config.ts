@@ -36,7 +36,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['"Anek Latin"', 'sans-serif'],
-        serif: ['"Advent Pro"', '"Anek Latin"', 'sans-serif'],
+        serif: ['"Playfair Display"', 'serif'],
       },
       fontSize: {
         'hero': ['clamp(2.5rem, 8vw, 5rem)', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
